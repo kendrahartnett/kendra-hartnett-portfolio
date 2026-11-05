@@ -3,7 +3,7 @@ import { ProjectGrid, ContactSection } from "@/components/sections";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Six projects spanning independent AI products, full-stack community applications, and business websites.",
+    "Five projects spanning independent AI products, full-stack community applications, and business websites.",
 };
 export default function Projects() {
   return (

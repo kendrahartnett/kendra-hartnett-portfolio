@@ -41,7 +41,9 @@ export function Navigation() {
           />
           <span>
             KENDRA HARTNETT
-            <span className="brand-sub">DEVELOPER & AI-AUGMENTED BUILDER</span>
+            <span className="brand-sub">
+              AI Collaborative Software Engineer
+            </span>
           </span>
         </Link>
         <button
@@ -101,39 +103,65 @@ export function Footer() {
 }
 export function HeroArtwork() {
   const ref = useRef<HTMLDivElement>(null);
-  const reduce = useReducedMotion();
+  const timeline = useRef<gsap.core.Timeline | null>(null);
+  const reduce = !!useReducedMotion();
   const [paused, setPaused] = useState(false);
   useEffect(() => {
-    if (reduce || paused) return;
+    if (reduce) return;
     const ctx = gsap.context(() => {
-      gsap.to(".hero-orbit", {
-        rotation: 360,
-        duration: 100,
-        repeat: -1,
-        ease: "none",
-      });
-      gsap.to(".art-image", {
-        y: -9,
-        duration: 5,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
+      timeline.current = gsap
+        .timeline({ paused: true })
+        .to(
+          ".hero-orbit",
+          {
+            rotation: 360,
+            duration: 100,
+            repeat: -1,
+            ease: "none",
+            force3D: true,
+          },
+          0,
+        )
+        .to(
+          ".art-float",
+          {
+            y: -9,
+            duration: 5,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut",
+            force3D: true,
+          },
+          0,
+        );
     }, ref);
-    return () => ctx.revert();
-  }, [reduce, paused]);
+    return () => {
+      ctx.revert();
+      timeline.current = null;
+    };
+  }, [reduce]);
+  // Pause the existing timeline rather than reverting/recreating it, which
+  // snapped the artwork back to its starting position on every toggle.
+  useEffect(() => {
+    timeline.current?.paused(paused || reduce);
+  }, [paused, reduce]);
+
   return (
     <div className="hero-art" ref={ref}>
       <div className="hero-orbit" aria-hidden="true" />
-      <Image
-        className="art-image"
-        src="/images/kh-emblem.webp"
-        alt="Radiant KH monogram encircled by violet and gold orbital light"
-        width={1672}
-        height={941}
-        priority
-        sizes="(max-width: 760px) 100vw, 60vw"
-      />
+      <div className="art-mask">
+        <div className="art-float">
+          <Image
+            className="art-image"
+            src="/images/kh-emblem.webp"
+            alt="Radiant KH monogram encircled by violet and gold orbital light"
+            width={1672}
+            height={941}
+            priority
+            sizes="(max-width: 760px) 100vw, 60vw"
+          />
+        </div>
+      </div>
       <span className="art-coordinate">
         HUMAN IDEAS. DIGITAL POSSIBILITIES.
       </span>

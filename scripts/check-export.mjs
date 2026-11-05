@@ -9,7 +9,6 @@ const routes = [
   "contact",
   ...[
     "eevora",
-    "eevoradocs",
     "the-bridge",
     "goodneighbor",
     "ethical-apple",
@@ -43,9 +42,14 @@ for (const route of routes) {
     checked++;
   }
 }
-const docs = await readFile("out/projects/eevoradocs/index.html", "utf8");
-assert.match(docs, /In development/);
-assert.match(docs, /illustrative/i);
+assert.equal(
+  await stat("out/projects/eevoradocs/index.html").catch(() => null),
+  null,
+  "Removed standalone project must not export",
+);
+const catalog = await readFile("out/projects/index.html", "utf8");
+assert.doesNotMatch(catalog, /href="\/projects\/eevoradocs/);
+assert.match(catalog, /href="\/projects\/eevora/);
 const apple = await readFile("out/projects/ethical-apple/index.html", "utf8");
 assert.match(apple, /not checkout quotes/);
 console.log(

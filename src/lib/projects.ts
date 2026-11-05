@@ -49,34 +49,6 @@ export const projects: Project[] = [
     flagship: true,
   },
   {
-    slug: "eevoradocs",
-    name: "EEVORADocs",
-    category: "Independent product · Document automation",
-    summary:
-      "A document-request workflow within the EEVORA ecosystem, designed around checklists, organized tracking, and human-reviewed AI drafts.",
-    status: "In development · Illustrative workflow",
-    image: "eevoradocs.png",
-    alt: "EEVORADocs illustrative checklist, tracking, email draft, and human review workflow",
-    live: "https://eevora.vercel.app/solutions",
-    repo: "https://github.com/kendrahartnett/eevora",
-    stack: ["Within the EEVORA website"],
-    problem:
-      "Requesting and following up on client documents can create repetitive administrative work for small accounting and tax preparation businesses.",
-    audience: "Small accounting and tax preparation businesses.",
-    features: [
-      "An illustrative four-step workflow: checklist, tracking, email draft, and human review.",
-      "Selectable steps, pause controls, and reduced-motion behavior in the website demonstration.",
-    ],
-    architecture:
-      "Presented inside the EEVORA Next.js website. The illustration describes a proposed Google Sheets tracking and AI drafting workflow; it is not a functioning document-processing backend.",
-    decision:
-      "Keep a person in control of the final request. AI-assisted drafting is presented as a proposed workflow with review, not autonomous sending.",
-    limits:
-      "In development. Missing-document detection, automated reminders, status tracking, and a dedicated dashboard are planned ideas, not released capabilities. No release date is announced.",
-    role: "Created and branded by Kendra Hartnett as part of her independent EEVORA ecosystem.",
-    flagship: true,
-  },
-  {
     slug: "the-bridge",
     name: "The Bridge",
     category: "Mission-driven · Full-stack application",

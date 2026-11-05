@@ -164,8 +164,7 @@ export function ProjectGrid({ all = true }: { all?: boolean }) {
             </div>
             <div className="project-external">
               <a href={p.live} target="_blank" rel="noreferrer">
-                {p.slug === "eevoradocs" ? "View concept" : "Visit website"}{" "}
-                <ArrowUpRight size={13} />
+                Visit website <ArrowUpRight size={13} />
               </a>
               <a href={p.repo} target="_blank" rel="noreferrer">
                 GitHub <Github size={13} />
@@ -368,23 +367,31 @@ export function AboutSection({ full = false }: { full?: boolean }) {
           title="The builder behind the ideas."
         />
         <p>
-          I’m Kendra Hartnett, a full-stack developer and AI-augmented builder.
-          I identify problems, envision solutions, and turn ideas into practical
-          applications.
+          I’m Kendra Hartnett, a full-stack developer and AI-augmented builder
+          taking a non-traditional path into tech.
         </p>
         <p>
-          My work spans community-focused software, business websites, and
-          independent products. I’m interested in what technology makes
-          possible—and in making thoughtful choices about how it gets there.
+          My journey hasn't followed the usual route, and that's become one of
+          my greatest strengths. Getting a second chance to pursue something I'm
+          passionate about gave me the opportunity to rethink what's possible,
+          challenge what I thought I was capable of, and prove to myself that
+          it's never too late to build something new.
         </p>
-        {full && (
-          <p>
-            Through the Next Chapter Project and my independent work on EEVORA,
-            I’m continuing to develop my engineering practice: building complete
-            experiences, questioning assumptions, and using AI with clear intent
-            and human oversight.
-          </p>
-        )}
+        <p>
+          I’m drawn to the process of identifying real-world problems, exploring
+          possibilities, and turning ideas into practical software. My work
+          spans community-focused applications, business websites, and
+          independent products, including my own developing venture, EEVORA.
+        </p>
+        <p>
+          Through the Next Chapter Project and my independent work, I'm building
+          more than technical skills. I'm developing the judgment, curiosity,
+          and problem-solving mindset that go into becoming a thoughtful
+          engineer. I believe in using technology—and AI—as tools to expand what
+          we can create, while keeping human thinking, creativity, and intention
+          at the center.
+        </p>
+        <p>I'm still writing my story, and I'm just getting started.</p>
         <Link className="text-link" href={full ? "/projects" : "/about"}>
           {full ? "Explore the work" : "A little more about me"}{" "}
           <ArrowUpRight size={18} />

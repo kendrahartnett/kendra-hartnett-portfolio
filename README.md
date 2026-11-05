@@ -1,6 +1,6 @@
 # Kendra Hartnett portfolio
 
-Next.js App Router, React, TypeScript, and Tailwind CSS. Static export supports Vercel and static hosting. All six approved projects have data-driven detail pages.
+Next.js App Router, React, TypeScript, and Tailwind CSS. Static export supports Vercel and static hosting. All five current projects have data-driven detail pages.
 
 ## Run
 
@@ -34,4 +34,3 @@ For Vercel: import the repository, select Next.js, and set `NEXT_PUBLIC_SITE_URL
 A preferred LinkedIn URL and public contact email were not supplied. No URLs or addresses were guessed. EEVORADocs is labeled in development and its current website workflow is explicitly illustrative. Future updates should distinguish new implementation from plans.
 
 Run npm start after a build for the production preview at http://127.0.0.1:3107. Run npm run check:export to check the exported routes and asset links. See docs/VERIFICATION.md for checks and limits.
-

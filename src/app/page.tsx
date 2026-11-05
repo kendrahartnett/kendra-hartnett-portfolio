@@ -20,7 +20,7 @@ export default function Home() {
         <div className="shell hero-layout">
           <div className="hero-copy">
             <span className="eyebrow hero-eyebrow">
-              <i /> FULL-STACK DEVELOPER · AI-AUGMENTED BUILDER
+              <i /> AI Collaborative Software Engineer
             </span>
             <h1>
               Ideas into
@@ -33,9 +33,9 @@ export default function Home() {
               for a world of possibilities.
             </p>
             <p className="hero-description">
-              Full-stack applications. Practical AI. Thoughtful automation.
-              <br />
-              From meaningful problems to technology people can use.
+              I combine full-stack development, practical AI, and thoughtful
+              automation to solve meaningful problems and build technology
+              people can use.
             </p>
             <div className="button-row">
               <Link className="button primary" href="/projects">
