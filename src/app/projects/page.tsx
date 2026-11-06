@@ -11,9 +11,9 @@ export default function Projects() {
       <section className="shell page-intro">
         <span className="eyebrow">THE PORTFOLIO / SELECTED WORK</span>
         <h1>
-          Ideas made
+          Building what
           <br />
-          <em>tangible.</em>
+          <em>could be.</em>
         </h1>
         <p>
           Independent products, mission-driven applications, and practical

@@ -267,10 +267,10 @@ export function ResponsibleAI() {
           </Link>
           <div className="responsibility-art">
             <Image
-              src="/images/kendra-signature.png"
-              alt="Kendra Hartnett name in violet and gold orbital light"
-              width={618}
-              height={356}
+              src="/images/kh-intention.png"
+              alt="KH monogram with a crescent moon, flowers, and flowing violet ribbons"
+              width={640}
+              height={360}
               sizes="(max-width: 760px) 90vw, 450px"
             />
           </div>

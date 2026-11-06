@@ -21,11 +21,7 @@ export function CinematicEntry() {
         /* Storage is optional. */
       }
       if ((seen && !replay) || window.scrollY > 40 || location.hash) return;
-      const image =
-        document.querySelector<HTMLImageElement>(".personal-art img");
-      // Never wait on a decorative asset or hide the server-rendered content.
-      const ready = !!image?.complete && image.naturalWidth > 0;
-      setActive(ready);
+      setActive(true);
       const targets = document.querySelectorAll(
         ".site-header, .hero-copy h1, .hero-lead, .hero-description, .hero-copy .button, .personal-art",
       );
@@ -38,7 +34,7 @@ export function CinematicEntry() {
             y: 0,
             duration: 0.8,
             stagger: 0.09,
-            delay: ready ? 1.15 : 0,
+            delay: 1.15,
             ease: "power3.out",
             clearProps: "opacity,transform",
           },
@@ -77,12 +73,12 @@ export function CinematicEntry() {
         <div className="cinematic-entry" ref={overlay}>
           <StarSprinkles />
           <div className="entry-halo" aria-hidden="true" />
-          {/* Original animated file, never a generated or frozen approximation. */}
+          {/* Preserve the supplied welcome animation. */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/kh-personal-brand.gif"
-            width="414"
-            height="414"
+            src="/images/kh-welcome-orbit.gif"
+            width="554"
+            height="311"
             alt=""
             className="entry-monogram"
           />
