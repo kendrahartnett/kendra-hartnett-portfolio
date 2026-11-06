@@ -1941,7 +1941,8 @@ em {
     width: 85%;
     max-width: min(646px, calc(100svh - clamp(88px, 7.85vw, 150px) - 72px));
     justify-self: center;
+    align-self: start;
     margin-left: 0;
-    margin-top: 0;
+    margin-top: clamp(8px, 1vw, 20px);
   }
 }
