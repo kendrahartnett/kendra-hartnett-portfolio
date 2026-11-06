@@ -11,7 +11,6 @@ A personal portfolio for Kendra Hartnett, an AI Collaborative Software Engineer.
 - Responsive pages for the home, projects, About, AI and automation, and contact sections.
 - Project cards and individual case-study pages for EEVORA, The Bridge, GoodNeighbor, and Ethical Apple.
 - An animated KH hero using Kendra's supplied artwork, with scroll reveals and reduced-motion support.
-- Interactive AI and automation scenarios that are explicitly presented as conceptual demonstrations.
 - A responsible AI section covering guardrails, safe fallbacks, human review, security, privacy, and failure-case evaluation.
 - Static export, sitemap, robots metadata, and an export check for routes, links, and assets.
 

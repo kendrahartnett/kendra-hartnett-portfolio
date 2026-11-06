@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight, ArrowDown } from "lucide-react";
 import { HeroArtwork } from "@/components/interactive";
+import { TypedHeroHeading } from "@/components/typed-hero-heading";
 import { StarSprinkles } from "@/components/star-sprinkles";
 import { ScrollChapters, Chapter } from "@/components/scroll-chapters";
 import { Spotlight } from "@/components/ui/spotlight";
@@ -22,11 +23,7 @@ export default function Home() {
         <Spotlight className="hero-spotlight" fill="#a66bff" />
         <div className="shell hero-layout">
           <div className="hero-copy">
-            <h1>
-              Ideas into
-              <br />
-              <span>Impact.</span>
-            </h1>
+            <TypedHeroHeading />
             <p className="hero-lead">
               I build purposeful technology
               <br />

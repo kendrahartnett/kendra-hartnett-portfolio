@@ -1,5 +1,22 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { CSSProperties } from "react";
+import {
+  SiAnthropic,
+  SiCss,
+  SiGithub,
+  SiHtml5,
+  SiJavascript,
+  SiNeon,
+  SiNextdotjs,
+  SiPostgresql,
+  SiPrisma,
+  SiReact,
+  SiTailwindcss,
+  SiTypescript,
+  SiVercel,
+  SiVite,
+} from "react-icons/si";
 import {
   ArrowUpRight,
   ArrowRight,
@@ -12,7 +29,6 @@ import {
   GitBranch as Github,
 } from "lucide-react";
 import { projects, github, linkedin } from "@/lib/projects";
-import { GlowFrame, ProblemLab } from "./interactive";
 export function SectionTitle({
   number,
   label,
@@ -234,11 +250,7 @@ export function AISection({ full = false }: { full?: boolean }) {
         </div>
         <div className="lab-heading">
           <h3>Find the friction. Build the fix.</h3>
-          <p>Explore four possible approaches to everyday business problems.</p>
         </div>
-        <GlowFrame>
-          <ProblemLab />
-        </GlowFrame>
       </div>
     </section>
   );
@@ -312,6 +324,22 @@ export function ResponsibleAI() {
   );
 }
 export function Toolkit() {
+  const tools = [
+    ["JavaScript", SiJavascript, "#e6bd78"],
+    ["React", SiReact, "#8fcef1"],
+    ["Next.js", SiNextdotjs, "#d9c5ec"],
+    ["TypeScript", SiTypescript, "#a88ce9"],
+    ["Tailwind CSS", SiTailwindcss, "#87cdd9"],
+    ["HTML", SiHtml5, "#e8ab9b"],
+    ["CSS", SiCss, "#bda4ef"],
+    ["Neon", SiNeon, "#a4e1cb"],
+    ["PostgreSQL", SiPostgresql, "#91afe3"],
+    ["Prisma", SiPrisma, "#d1b5e8"],
+    ["Vite", SiVite, "#dca4e8"],
+    ["GitHub", SiGithub, "#cbb9d6"],
+    ["Vercel", SiVercel, "#efcba7"],
+    ["Anthropic API", SiAnthropic, "#e6b7a8"],
+  ] as const;
   return (
     <section className="shell section toolkit">
       <SectionTitle
@@ -320,54 +348,23 @@ export function Toolkit() {
         title="The right tools for the problem."
         copy="Technologies used across the linked projects. Each case study shows where and how they fit."
       />
-      <div className="toolkit-grid">
-        {[
-          [
-            "Frontend",
-            "React",
-            "Next.js",
-            "TypeScript",
-            "JavaScript",
-            "Tailwind CSS",
-            "HTML & CSS",
-          ],
-          [
-            "Backend & data",
-            "REST APIs",
-            "Neon PostgreSQL",
-            "Prisma",
-            "Drizzle",
-            "Auth.js",
-            "Neon Auth",
-          ],
-          [
-            "AI & workflows",
-            "Anthropic API",
-            "Human review",
-            "Deterministic planning",
-            "Resend",
-            "Ollama exploration",
-          ],
-          [
-            "Build & ship",
-            "GitHub",
-            "Vercel",
-            "Vite",
-            "Motion",
-            "Codex",
-            "Claude Code",
-          ],
-        ].map(([title, ...tools]) => (
-          <div key={title}>
-            <h3>{title}</h3>
-            <div className="tags">
-              {tools.map((t) => (
-                <span key={t}>{t}</span>
-              ))}
+      <ul
+        className="toolkit-grid"
+        aria-label="Technologies used across projects"
+      >
+        {tools.map(([name, Icon, accent]) => (
+          <li
+            className="toolkit-tile"
+            key={name}
+            style={{ "--tile-accent": accent } as CSSProperties}
+          >
+            <div className="toolkit-emblem" aria-hidden="true">
+              <Icon />
             </div>
-          </div>
+            <span>{name}</span>
+          </li>
         ))}
-      </div>
+      </ul>
     </section>
   );
 }

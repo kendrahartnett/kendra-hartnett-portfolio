@@ -30,7 +30,19 @@ export function Navigation() {
           href="/"
           className="brand"
           aria-label="Kendra Hartnett home"
-          onClick={() => setOpen(false)}
+          onClick={(event) => {
+            setOpen(false);
+            if (pathname === "/") {
+              event.preventDefault();
+              window.scrollTo({
+                top: 0,
+                behavior: window.matchMedia("(prefers-reduced-motion: reduce)")
+                  .matches
+                  ? "auto"
+                  : "smooth",
+              });
+            }
+          }}
         >
           <Image
             src="/images/kh-monogram.webp"
@@ -38,12 +50,7 @@ export function Navigation() {
             height={40}
             alt="KH"
           />
-          <span>
-            KENDRA HARTNETT
-            <span className="brand-sub">
-              AI Collaborative Software Engineer
-            </span>
-          </span>
+          <span>AI Collaborative Software Engineer</span>
         </Link>
         <button
           className="menu-toggle"

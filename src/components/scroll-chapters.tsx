@@ -13,7 +13,7 @@ export function ScrollChapters({ children }: { children: React.ReactNode }) {
       const host = root.current;
       if (!host) return;
       const selector =
-        ".section-heading, .philosophy-heading, .process > div, .capability-grid > div, .project-card, .ai-intro, .lab-heading, .glow-frame, .responsibility-grid > div, .toolkit-grid > div, .about-art, .about-section > div:last-child, .contact-section > .shell";
+        ".section-heading, .philosophy-heading, .process > div, .capability-grid > div, .project-card, .ai-intro, .lab-heading, .glow-frame, .responsibility-grid > div, .toolkit-grid > li, .about-art, .about-section > div:last-child, .contact-section > .shell";
       const candidates = Array.from(
         host.querySelectorAll<HTMLElement>(selector),
       );
