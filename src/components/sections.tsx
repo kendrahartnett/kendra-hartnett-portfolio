@@ -29,6 +29,7 @@ import {
   GitBranch as Github,
 } from "lucide-react";
 import { projects, github, linkedin } from "@/lib/projects";
+import { ContactForm } from "@/components/contact-form";
 export function SectionTitle({
   number,
   label,
@@ -124,7 +125,7 @@ export function Capabilities() {
   return (
     <section className="shell section capabilities">
       <SectionTitle
-        number="01"
+        number="02"
         label="WHAT I BUILD"
         title="Purpose at the core. Possibility in the code."
       />
@@ -203,7 +204,7 @@ export function SelectedWork() {
     <section id="work" className="shell section work">
       <div className="heading-row">
         <SectionTitle
-          number="02"
+          number="01"
           label="SELECTED WORK"
           title="Ideas brought to life."
         />
@@ -225,8 +226,8 @@ export function AISection() {
           <div>
             <SectionTitle
               number="03"
-              label="AI COLLABORATIVE ENGINEERING"
-              title="Building software with AI as a collaborator."
+              label="BUILDING WITH AI"
+              title="Building with AI. Guided by human judgment."
             />
             <p>
               I bring the problem, context, and judgment. AI helps me explore
@@ -242,19 +243,17 @@ export function AISection() {
             sizes="(max-width: 760px) 100vw, 50vw"
           />
         </div>
-        <div className="lab-heading">
-          <h3>Building alongside AI. Pushing boundaries with purpose.</h3>
-        </div>
       </div>
+      <ResponsibleAI />
     </section>
   );
 }
 export function ResponsibleAI() {
   return (
-    <section className="light-section responsibility section">
+    <div className="light-section responsibility section">
       <div className="shell responsibility-grid">
         <div>
-          <span className="eyebrow">INTELLIGENCE WITH INTENTION</span>
+          <span className="eyebrow">INTELLIGENCE WITH INTENTION · RESPONSIBLE PRACTICE</span>
           <h2>
             Build with intelligence.
             <br />
@@ -272,9 +271,6 @@ export function ResponsibleAI() {
             before giving a model access to personal information or real-world
             actions.
           </p>
-          <Link className="text-link" href="/projects/ethical-apple">
-            Predictable planning in Ethical Apple <ArrowUpRight size={17} />
-          </Link>
           <div className="responsibility-art">
             <Image
               src="/images/kh-intention.png"
@@ -289,23 +285,23 @@ export function ResponsibleAI() {
           {[
             [
               "Guardrails beyond the prompt",
-              "Define allowed tasks, validate inputs and outputs, and restrict tool permissions in application code. Treat uploaded content and model responses as untrusted; a prompt alone is not a security boundary.",
+              "Define allowed tasks, validate inputs and outputs, and restrict tool permissions in code. Treat model responses and uploads as untrusted.",
             ],
             [
               "Safe fallbacks, clear limits",
-              "Plan for timeouts, unavailable models, and invalid responses. Use predictable rules or a manual workflow where possible; otherwise stop safely, explain the limitation, and let a person take over.",
+              "Plan for timeouts, unavailable models, and invalid responses. Fall back to predictable rules or a manual workflow; otherwise stop safely.",
             ],
             [
               "Human judgment stays in control",
-              "Keep AI suggestions distinct from approved actions. Require review before consequential changes, make uncertainty visible, and give people a way to correct or reject an output.",
+              "Keep suggestions distinct from approved actions. Require review for consequential changes and make outputs easy to correct or reject.",
             ],
             [
               "Security & privacy by design",
-              "Send only necessary data, keep secrets on the server, and enforce authentication and authorization outside the model. Limit access, redact sensitive logs, and consider data retention before choosing an integration.",
+              "Send only necessary data, keep secrets server-side, and enforce access outside the model. Consider logs and retention before integrating.",
             ],
             [
               "Evaluate the failure cases",
-              "Test more than the happy path: misleading outputs, biased responses, prompt injection, malformed data, and service failures. Check whether guardrails and fallback paths behave as intended, and revisit them as the system changes.",
+              "Test misleading or biased outputs, prompt injection, malformed data, and service failures. Revisit guardrails and fallbacks as the system changes.",
             ],
           ].map(([t, d]) => (
             <div key={t}>
@@ -318,7 +314,7 @@ export function ResponsibleAI() {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 export function Toolkit() {
@@ -389,22 +385,6 @@ export function AboutSection({ full = false }: { full?: boolean }) {
           bringing ideas to life through technology.
         </p>
         <p>
-          I approach development through both an engineering and creative lens.
-          I enjoy designing thoughtful user experiences, exploring new
-          possibilities, and bringing ideas from concept to reality. To me,
-          building software isn't just about making things work. It's about
-          creating solutions that work well, feel intuitive, and serve a
-          purpose.
-        </p>
-        <p>
-          Curiosity shapes the way I think and build. I'm naturally drawn to
-          understanding how things work, questioning assumptions, spotting
-          opportunities, and finding better ways to solve problems. I pay
-          attention to both the bigger picture and the little details, from
-          application architecture and functionality to visual design,
-          interactions, and the overall user experience.
-        </p>
-        <p>
           My path into technology hasn't been traditional. I chose to give
           myself a second chance and pursue something entirely new. Along the
           way, I've challenged my own expectations, pushed beyond what I once
@@ -453,15 +433,8 @@ export function ContactSection({
           <br className="desktop-break" /> and collaborators with an idea. Let’s
           connect.
         </p>
-        <div className="button-row">
-          <a
-            className="button primary"
-            href="https://eevora.vercel.app/contact"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Get in touch through EEVORA <ArrowUpRight size={17} />
-          </a>
+        <ContactForm />
+        <div className="button-row contact-socials">
           <a
             className="button secondary"
             href={github}
@@ -479,9 +452,6 @@ export function ContactSection({
             Connect on LinkedIn <ArrowUpRight size={17} />
           </a>
         </div>
-        <span className="contact-note">
-          The contact link opens my EEVORA website.
-        </span>
       </div>
     </section>
   );

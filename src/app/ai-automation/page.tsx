@@ -1,6 +1,5 @@
 import {
   AISection,
-  ResponsibleAI,
   ContactSection,
 } from "@/components/sections";
 export const metadata = {
@@ -25,7 +24,6 @@ export default function AI() {
         </p>
       </div>
       <AISection />
-      <ResponsibleAI />
       <ContactSection />
     </main>
   );

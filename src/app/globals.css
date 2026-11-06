@@ -619,6 +619,10 @@ em {
   background:
     radial-gradient(ellipse at 70% 10%, #33164655, transparent 55%), #140e1e;
   border-block: 1px solid #ffffff08;
+  padding-bottom: 0;
+}
+.ai-section > .shell {
+  padding-bottom: 100px;
 }
 .ai-intro {
   display: grid;
@@ -938,6 +942,65 @@ em {
   font-size: 10px;
   margin-top: 17px;
 }
+.contact-form {
+  width: min(100%, 760px);
+  margin: 38px auto 28px;
+  padding: clamp(24px, 4vw, 42px);
+  border: 1px solid #694e7777;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #30213d99, #1b1427dd);
+  box-shadow: 0 22px 70px #08040d55, inset 0 1px #ffffff0c;
+  text-align: left;
+}
+.contact-form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.contact-field { margin-bottom: 18px; }
+.contact-field label {
+  display: block;
+  margin-bottom: 8px;
+  color: #e9d9f4;
+  font-size: 12px;
+  font-weight: 600;
+}
+.contact-field input,
+.contact-field textarea {
+  display: block;
+  width: 100%;
+  border: 1px solid #80699388;
+  border-radius: 6px;
+  background: #110c1b;
+  color: #f9f2ff;
+  padding: 12px 14px;
+  font: inherit;
+  font-size: 14px;
+  resize: vertical;
+}
+.contact-field input:focus-visible,
+.contact-field textarea:focus-visible {
+  outline: 2px solid #d5adee;
+  outline-offset: 2px;
+}
+.contact-form-bottom {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-height: 48px;
+}
+.contact-form-bottom .button { cursor: pointer; }
+.contact-form-bottom .button:disabled { opacity: .55; cursor: wait; }
+.contact-form-status {
+  font-size: 12px;
+  color: #d8c6e8;
+  line-height: 1.5;
+}
+.contact-form-status[data-kind="error"] { color: #ffbdad; }
+.contact-form-status[data-kind="success"] { color: #bceacb; }
+.contact-honeypot { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.contact-socials { margin-top: 0 !important; }
+.contact-socials .button { min-width: 0; }
 .footer {
   display: flex;
   justify-content: space-between;
@@ -1436,6 +1499,9 @@ em {
     grid-template-columns: 1fr;
     gap: 8px;
   }
+  .ai-section > .shell {
+    padding-bottom: 72px;
+  }
   .ai-intro img {
     width: 100%;
     transform: scale(1.05);
@@ -1538,6 +1604,9 @@ em {
   .contact-section .button {
     min-width: 250px;
   }
+  .contact-form-row { grid-template-columns: 1fr; gap: 0; }
+  .contact-form-bottom { flex-direction: column; align-items: stretch; gap: 12px; }
+  .contact-form-bottom .button { justify-content: center; }
   .footer {
     padding-block: 28px;
     gap: 24px;

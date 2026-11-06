@@ -6,11 +6,9 @@ import { StarSprinkles } from "@/components/star-sprinkles";
 import { ScrollChapters, Chapter } from "@/components/scroll-chapters";
 import { Spotlight } from "@/components/ui/spotlight";
 import {
-  Philosophy,
   Capabilities,
   SelectedWork,
   AISection,
-  ResponsibleAI,
   Toolkit,
   AboutSection,
   ContactSection,
@@ -47,26 +45,20 @@ export default function Home() {
         </div>
         <div className="shell hero-foot">
           <span>HUMAN-CENTERED. PURPOSE-DRIVEN. FUTURE-FOCUSED.</span>
-          <a href="#philosophy">
+          <a href="#work">
             SCROLL TO EXPLORE <ArrowDown size={15} />
           </a>
         </div>
       </section>
       <ScrollChapters>
-        <Chapter id="philosophy">
-          <Philosophy />
+        <Chapter>
+          <SelectedWork />
         </Chapter>
         <Chapter>
           <Capabilities />
         </Chapter>
         <Chapter>
-          <SelectedWork />
-        </Chapter>
-        <Chapter>
           <AISection />
-        </Chapter>
-        <Chapter>
-          <ResponsibleAI />
         </Chapter>
         <Chapter>
           <Toolkit />

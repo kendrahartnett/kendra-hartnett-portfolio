@@ -5,9 +5,8 @@
   "scripts": {
     "dev": "next dev --hostname 127.0.0.1",
     "build": "next build",
-    "start": "node scripts/preview.mjs",
-    "typecheck": "tsc --noEmit",
-    "check:export": "node scripts/check-export.mjs"
+    "start": "next start --hostname 127.0.0.1 --port 3107",
+    "typecheck": "tsc --noEmit"
   },
   "repository": {
     "type": "git",

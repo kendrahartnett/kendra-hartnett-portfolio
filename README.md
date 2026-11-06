@@ -12,7 +12,7 @@ A personal portfolio for Kendra Hartnett, an AI Collaborative Software Engineer.
 - Project cards and individual case-study pages for EEVORA, The Bridge, GoodNeighbor, and Ethical Apple.
 - An animated KH hero using Kendra's supplied artwork, with scroll reveals and reduced-motion support.
 - A responsible AI section covering guardrails, safe fallbacks, human review, security, privacy, and failure-case evaluation.
-- Static export, sitemap, robots metadata, and an export check for routes, links, and assets.
+- A portfolio contact form with server-side validation and Resend delivery, alongside sitemap and robots metadata.
 
 ## About me
 
@@ -38,11 +38,12 @@ Open `http://127.0.0.1:3000`. For a production build and local preview:
 ```bash
 npm run typecheck
 npm run build
-npm run check:export
 npm start
 ```
 
-The static site is written to `out/`; `npm start` serves the export at `http://127.0.0.1:3107`. Set `NEXT_PUBLIC_SITE_URL` to the final deployment origin before building so the sitemap and social metadata use the correct URL. No database or API credentials are required for this portfolio. Contact links lead to the EEVORA contact page; the portfolio does not collect form submissions.
+`npm start` serves the production build at `http://127.0.0.1:3107`. Copy `.env.example` to `.env.local` and add `RESEND_API_KEY` to send contact messages locally. `CONTACT_TO_EMAIL` and `CONTACT_FROM_EMAIL` configure delivery; the example sender is for Resend testing only. Use a verified sending domain in production. Keep the API key on the server. Set `NEXT_PUBLIC_SITE_URL` to the deployed origin before building so the sitemap and social metadata use the correct URL.
+
+The contact endpoint requires a server-capable Next.js host. The existing Sites static-export hosting configuration cannot serve it; migrate hosting or provide a separate server endpoint before publishing this version.
 
 Project content is maintained in [`src/lib/projects.ts`](src/lib/projects.ts). [Content verification](docs/CONTENT_VERIFICATION.md) records the evidence and limits behind project descriptions, and [verification notes](docs/VERIFICATION.md) explain the build checks.
 
