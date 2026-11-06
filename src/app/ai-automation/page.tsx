@@ -6,7 +6,7 @@ import {
 export const metadata = {
   title: "AI & Automation",
   description:
-    "Practical AI, responsible engineering, and illustrative workflows for everyday business problems.",
+    "How Kendra Hartnett collaborates with AI in software development, with responsible engineering and human judgment.",
 };
 export default function AI() {
   return (
@@ -24,7 +24,7 @@ export default function AI() {
           the decision.
         </p>
       </div>
-      <AISection full />
+      <AISection />
       <ResponsibleAI />
       <ContactSection />
     </main>

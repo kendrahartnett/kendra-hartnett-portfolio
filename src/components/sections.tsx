@@ -205,7 +205,7 @@ export function SelectedWork() {
         <SectionTitle
           number="02"
           label="SELECTED WORK"
-          title="Different problems. Purposeful solutions."
+          title="Ideas brought to life."
         />
         <p>
           A selection of independent products,
@@ -217,7 +217,7 @@ export function SelectedWork() {
     </section>
   );
 }
-export function AISection({ full = false }: { full?: boolean }) {
+export function AISection() {
   return (
     <section className="section ai-section">
       <div className="shell">
@@ -225,20 +225,14 @@ export function AISection({ full = false }: { full?: boolean }) {
           <div>
             <SectionTitle
               number="03"
-              label="AI & AUTOMATION"
-              title="Making AI useful in the real world."
+              label="AI COLLABORATIVE ENGINEERING"
+              title="Building software with AI as a collaborator."
             />
             <p>
-              Start with the work. Find the friction. Build a solution that
-              makes sense—with people in control.
+              I bring the problem, context, and judgment. AI helps me explore
+              possibilities, test approaches, and iterate. I verify the output
+              and shape the final software around the people it serves.
             </p>
-            <Link
-              className="text-link"
-              href={full ? "/projects/eevora" : "/ai-automation"}
-            >
-              {full ? "Explore EEVORA" : "Explore my approach"}{" "}
-              <ArrowUpRight size={18} />
-            </Link>
           </div>
           <Image
             src="/images/ai-collaboration.webp"
@@ -249,7 +243,7 @@ export function AISection({ full = false }: { full?: boolean }) {
           />
         </div>
         <div className="lab-heading">
-          <h3>Find the friction. Build the fix.</h3>
+          <h3>Building alongside AI. Pushing boundaries with purpose.</h3>
         </div>
       </div>
     </section>
@@ -268,10 +262,14 @@ export function ResponsibleAI() {
           </h2>
           <p>
             I approach AI as a capability to evaluate, not an authority to
-            trust. My starting questions are practical: does this need AI, what
-            could go wrong, what data does it need, and what happens when it
-            fails? Responsible integration means designing those boundaries
-            before giving a model access to people's information or real-world
+            trust. My starting questions are practical: Does this actually need
+            AI? What could go wrong? What data does it require? And what happens
+            when it fails?
+          </p>
+          <p>
+            Responsible integration means establishing clear boundaries from the
+            beginning, considering privacy, reliability, and human oversight
+            before giving a model access to personal information or real-world
             actions.
           </p>
           <Link className="text-link" href="/projects/ethical-apple">
