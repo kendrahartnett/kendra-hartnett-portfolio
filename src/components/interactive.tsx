@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import {
   ArrowUpRight,
   Menu,
@@ -12,7 +12,6 @@ import {
   GitBranch as Github,
 } from "lucide-react";
 import { MotionConfig, motion, useReducedMotion } from "motion/react";
-import gsap from "gsap";
 import { BorderBeam } from "./ui/border-beam";
 import { github } from "@/lib/projects";
 const nav = [
@@ -102,77 +101,35 @@ export function Footer() {
   );
 }
 export function HeroArtwork() {
-  const ref = useRef<HTMLDivElement>(null);
-  const timeline = useRef<gsap.core.Timeline | null>(null);
-  const reduce = !!useReducedMotion();
-  const [paused, setPaused] = useState(false);
-  useEffect(() => {
-    if (reduce) return;
-    const ctx = gsap.context(() => {
-      timeline.current = gsap
-        .timeline({ paused: true })
-        .to(
-          ".hero-orbit",
-          {
-            rotation: 360,
-            duration: 100,
-            repeat: -1,
-            ease: "none",
-            force3D: true,
-          },
-          0,
-        )
-        .to(
-          ".art-float",
-          {
-            y: -9,
-            duration: 5,
-            repeat: -1,
-            yoyo: true,
-            ease: "sine.inOut",
-            force3D: true,
-          },
-          0,
-        );
-    }, ref);
-    return () => {
-      ctx.revert();
-      timeline.current = null;
-    };
-  }, [reduce]);
-  // Pause the existing timeline rather than reverting/recreating it, which
-  // snapped the artwork back to its starting position on every toggle.
-  useEffect(() => {
-    timeline.current?.paused(paused || reduce);
-  }, [paused, reduce]);
-
+  const reduce = useReducedMotion();
+  const [hidden, setHidden] = useState<boolean | null>(null);
+  const show = hidden === null ? !reduce : !hidden;
   return (
-    <div className="hero-art" ref={ref}>
-      <div className="hero-orbit" aria-hidden="true" />
-      <div className="art-mask">
-        <div className="art-float">
+    <div className="hero-art personal-art">
+      <div className="personal-art-glow" aria-hidden="true" />
+      <div className="personal-art-image">
+        {show && (
           <Image
             className="art-image"
-            src="/images/kh-emblem.webp"
-            alt="Radiant KH monogram encircled by violet and gold orbital light"
-            width={1672}
-            height={941}
+            src="/images/kh-personal-brand.gif"
+            alt="Animated KH monogram with Chicago skyline, books, plants, a squirrel mug, and purple and gold celestial light"
+            width={414}
+            height={414}
+            unoptimized
             priority
-            sizes="(max-width: 760px) 100vw, 60vw"
+            sizes="(max-width: 760px) 85vw, 43vw"
           />
-        </div>
+        )}
       </div>
       <span className="art-coordinate">
         HUMAN IDEAS. DIGITAL POSSIBILITIES.
       </span>
       <button
         className="motion-control"
-        onClick={() => setPaused(!paused)}
-        aria-label={
-          paused ? "Play decorative animation" : "Pause decorative animation"
-        }
+        onClick={() => setHidden(show)}
+        aria-label={show ? "Hide animated artwork" : "Show animated artwork"}
       >
-        {paused ? <Play size={13} /> : <Pause size={13} />}
+        {show ? <Pause size={13} /> : <Play size={13} />}
       </button>
     </div>
   );

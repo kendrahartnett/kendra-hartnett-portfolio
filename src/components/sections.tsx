@@ -39,11 +39,12 @@ export function Philosophy() {
     <section className="philosophy light-section">
       <div className="shell">
         <div className="philosophy-heading">
-          <span className="eyebrow">THE WAY I BUILD</span>
+          <span className="eyebrow">ENGINEERING + IMAGINATION</span>
           <h2>
-            I find the friction.
+            I think critically.
+            <br />I create boldly.
             <br />
-            <span>I build the fix.</span>
+            <span>I build purposefully.</span>
           </h2>
           <p>
             Useful technology starts with a better question. My process connects
@@ -77,6 +78,11 @@ export function Capabilities() {
       Code2,
       "Full-stack applications",
       "Interfaces, backend systems, databases, and integrations.",
+    ],
+    [
+      Layers3,
+      "UI/UX & interaction design",
+      "Intuitive interfaces, thoughtful user journeys, and the details that make software feel right.",
     ],
     [
       Sparkles,
@@ -367,31 +373,59 @@ export function AboutSection({ full = false }: { full?: boolean }) {
           title="The builder behind the ideas."
         />
         <p>
-          I’m Kendra Hartnett, a full-stack developer and AI-augmented builder
-          taking a non-traditional path into tech.
+          I'm a Full-Stack Developer and AI-Augmented Builder who turns ideas
+          into meaningful, functional technology.
         </p>
         <p>
-          My journey hasn't followed the usual route, and that's become one of
-          my greatest strengths. Getting a second chance to pursue something I'm
-          passionate about gave me the opportunity to rethink what's possible,
-          challenge what I thought I was capable of, and prove to myself that
-          it's never too late to build something new.
+          I approach development through both an engineering and creative lens.
+          I love the process of solving problems, designing intuitive user
+          experiences, exploring new possibilities, and bringing products from
+          concept to reality. For me, building software isn't just about making
+          things work. It's about making them work well, feel intuitive, and
+          serve a purpose.
         </p>
         <p>
-          I’m drawn to the process of identifying real-world problems, exploring
-          possibilities, and turning ideas into practical software. My work
-          spans community-focused applications, business websites, and
-          independent products, including my own developing venture, EEVORA.
+          Curiosity drives the way I think and build. I'm drawn to understanding
+          how things work, questioning assumptions, recognizing opportunities,
+          and finding better ways to solve problems. I care about the details
+          just as much as the bigger picture—from application architecture and
+          functionality to visual design, interactions, and the overall user
+          experience.
         </p>
         <p>
-          Through the Next Chapter Project and my independent work, I'm building
-          more than technical skills. I'm developing the judgment, curiosity,
-          and problem-solving mindset that go into becoming a thoughtful
-          engineer. I believe in using technology—and AI—as tools to expand what
-          we can create, while keeping human thinking, creativity, and intention
-          at the center.
+          My work spans full-stack application development, AI integration,
+          workflow automation, and UI/UX design. I'm particularly interested in
+          the intersection of human creativity and emerging technology, and how
+          thoughtful engineering can make everyday processes more useful,
+          accessible, and efficient.
         </p>
-        <p>I'm still writing my story, and I'm just getting started.</p>
+        <p>
+          My path into technology hasn't been traditional. I chose to give
+          myself a second chance and pursue something entirely new. Along the
+          way, I've challenged my own expectations, pushed beyond what I once
+          thought possible, and continually discovered that I'm capable of more
+          than I imagined. That perspective has shaped how I approach
+          challenges: with resourcefulness, adaptability, initiative, and a
+          willingness to think differently.
+        </p>
+        <p>
+          The Next Chapter Project is an important part of that journey,
+          alongside my independent work.
+        </p>
+        <p>
+          I'm also building EEVORA, my independent product venture, where I
+          explore ideas, identify opportunities, and develop technology around
+          real-world problems.
+        </p>
+        <p>
+          I believe great software brings together logic and creativity,
+          functionality and experience, technology and human understanding. I
+          take the engineering seriously, but I also believe there's room for
+          imagination, experimentation, and a little magic along the way.
+        </p>
+        <p className="personal-motto">
+          I think critically. I create boldly. I build purposefully.
+        </p>
         <Link className="text-link" href={full ? "/projects" : "/about"}>
           {full ? "Explore the work" : "A little more about me"}{" "}
           <ArrowUpRight size={18} />

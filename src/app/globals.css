@@ -1542,3 +1542,395 @@ em {
   color: transparent;
   background-clip: text;
 }
+/* The supplied KH hero composition, scaled proportionally for wide screens. */
+@media (min-width: 1101px) {
+  .site-header .shell,
+  .hero .shell {
+    width: 90%;
+    max-width: 1920px;
+  }
+  .nav-inner {
+    height: clamp(88px, 7.85vw, 150px);
+  }
+  .site-header .brand {
+    font-size: clamp(14px, 1.26vw, 24px);
+    gap: clamp(12px, 1.05vw, 20px);
+  }
+  .site-header .brand img {
+    width: clamp(60px, 5.25vw, 100px);
+  }
+  .site-header .brand-sub {
+    font-size: clamp(8px, 0.68vw, 13px);
+    margin-top: 6px;
+  }
+  .nav-links {
+    font-size: clamp(12px, 1.05vw, 20px);
+    gap: clamp(32px, 2.9vw, 56px);
+  }
+  .nav-links a:last-child {
+    padding: clamp(12px, 1.05vw, 20px) clamp(20px, 1.6vw, 31px);
+  }
+  .hero-layout {
+    min-height: max(625px, calc(100svh - clamp(88px, 7.85vw, 150px)));
+    margin-top: 0;
+    align-items: start;
+  }
+  .hero-copy {
+    padding: clamp(28px, 2.1vw, 40px) 0 38px;
+  }
+  .hero h1 {
+    font-size: clamp(84px, 7.55vw, 144px);
+    line-height: 0.98;
+    margin: 0 0 clamp(32px, 2.85vw, 54px);
+  }
+  .hero-lead {
+    font-size: clamp(22px, 1.78vw, 34px);
+  }
+  .hero-description {
+    font-size: clamp(13px, 1.05vw, 20px);
+    margin-top: clamp(22px, 1.78vw, 34px);
+    max-width: 810px;
+  }
+  .hero .button-row {
+    margin-top: clamp(32px, 2.45vw, 47px);
+    gap: clamp(16px, 1.15vw, 22px);
+  }
+  .hero .button {
+    font-size: clamp(12px, 0.95vw, 18px);
+    padding: clamp(16px, 1.25vw, 24px) clamp(22px, 1.78vw, 34px);
+    gap: 28px;
+  }
+  .hero .button svg {
+    width: 22px;
+    height: 22px;
+  }
+  .hero-art {
+    position: absolute;
+    left: 45%;
+    top: clamp(-80px, -4.2vw, -46px);
+    width: 72%;
+    height: clamp(650px, 42vw, 800px);
+    aspect-ratio: auto;
+    margin: 0;
+  }
+  .art-coordinate {
+    bottom: 12px;
+    left: 30%;
+    font-size: clamp(8px, 0.68vw, 13px);
+  }
+  .motion-control {
+    bottom: 10px;
+    right: 20%;
+  }
+  .hero-foot {
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    width: 90%;
+    border: 0;
+    padding: 0;
+  }
+  .hero-foot > span {
+    display: none;
+  }
+  .hero-foot > a {
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .hero-foot > a:focus-visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+@media (max-width: 1100px) and (min-width: 761px) {
+  .hero-copy {
+    padding-top: 40px;
+  }
+  .hero h1 {
+    margin-top: 0;
+  }
+}
+@media (max-width: 760px) {
+  .hero h1 {
+    margin-top: 0;
+  }
+  .hero-copy {
+    padding-top: 26px;
+  }
+}
+.scroll-chapter {
+  position: relative;
+}
+.chapter-light {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: url("/images/kh-emblem.webp") center 70% / cover no-repeat;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+@media (prefers-reduced-motion: reduce) {
+  .chapter-light {
+    display: none;
+  }
+  .scroll-chapters [style] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+@media print {
+  .scroll-chapters [style] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .chapter-light {
+    display: none;
+  }
+}
+/* Personal artwork retains the source GIF's square proportions and every frame. */
+.hero-art.personal-art {
+  position: relative;
+  left: auto;
+  top: auto;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  margin: 0;
+  align-self: center;
+  display: block;
+  isolation: isolate;
+}
+.personal-art-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+}
+.personal-art .art-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.personal-art-glow {
+  position: absolute;
+  inset: 8%;
+  z-index: -1;
+  background: radial-gradient(ellipse, #7b31ad22, transparent 70%);
+}
+.personal-art .art-coordinate {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  font-size: clamp(7px, 0.65vw, 12px);
+}
+.personal-art .motion-control {
+  right: 0;
+  bottom: -5px;
+  z-index: 2;
+}
+.capability-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.about-art {
+  align-self: start;
+  position: sticky;
+  top: 120px;
+}
+.personal-motto {
+  color: var(--gold);
+  font-weight: 600;
+}
+.star-sprinkles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.star-sprinkles i {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #e9c68c;
+  box-shadow: 0 0 8px #e9b76560;
+  opacity: 0.25;
+  animation: starlight 7s ease-in-out infinite alternate;
+}
+.star-sprinkles i:nth-child(6n) {
+  width: 9px;
+  height: 9px;
+  border-radius: 0;
+  clip-path: polygon(
+    50% 0,
+    60% 40%,
+    100% 50%,
+    60% 60%,
+    50% 100%,
+    40% 60%,
+    0 50%,
+    40% 40%
+  );
+}
+@keyframes starlight {
+  from {
+    opacity: 0.12;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0.48;
+    transform: translateY(-8px);
+  }
+}
+.cinematic-entry {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  background: #0d0814;
+  pointer-events: none;
+  animation: entry-exit 0.65s ease 1.4s both;
+}
+.entry-halo {
+  position: absolute;
+  width: min(85vw, 680px);
+  aspect-ratio: 1;
+  background: radial-gradient(
+    ellipse,
+    #a35ce232,
+    #d5a04c0e 40%,
+    transparent 68%
+  );
+  animation: halo-open 1.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.entry-monogram {
+  position: relative;
+  width: min(64vw, 360px);
+  height: auto;
+  animation: monogram-open 1s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+.entry-skip {
+  position: absolute;
+  bottom: 32px;
+  right: 5%;
+  color: #dacbe4;
+  border: 1px solid #755c89;
+  padding: 10px 16px;
+  background: #110b1b;
+  pointer-events: auto;
+}
+@keyframes halo-open {
+  from {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes monogram-open {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes entry-exit {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.chapter-light {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #a76ee8 35%,
+    #e8bd7f 55%,
+    transparent
+  );
+  box-shadow: 0 0 20px #b078d52b;
+  height: 1px;
+}
+@media (min-width: 1101px) {
+  .hero-art.personal-art {
+    width: 112%;
+    margin-left: -2%;
+    margin-top: -15px;
+  }
+}
+@media (max-width: 760px) {
+  .hero-art.personal-art {
+    width: min(88%, 414px);
+    margin: 20px auto 24px;
+  }
+  .personal-art .art-coordinate {
+    bottom: -6px;
+    font-size: 7px;
+  }
+  .personal-art .motion-control {
+    bottom: -14px;
+    right: -5px;
+  }
+  .capability-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .capability-grid > div:last-child {
+    grid-column: auto;
+  }
+  .about-art {
+    position: relative;
+    top: auto;
+  }
+  .star-sprinkles i:nth-child(even) {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cinematic-entry {
+    display: none;
+  }
+  .star-sprinkles i {
+    animation: none;
+  }
+}
+.hero-art.personal-art {
+  max-width: 760px;
+}
+.personal-art-image {
+  mix-blend-mode: lighten;
+}
+@media (min-width: 1101px) {
+  .hero-art.personal-art {
+    width: 100%;
+    margin-left: 2%;
+  }
+}
+.intro-replay {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 101;
+  padding: 8px 12px;
+  background: #21152e;
+  border: 1px solid #a380bb;
+  color: #f4e9fc;
+  font-size: 12px;
+}
+.hero-art.personal-art {
+  isolation: auto;
+}
+.hero-art.personal-art {
+  mix-blend-mode: lighten;
+}

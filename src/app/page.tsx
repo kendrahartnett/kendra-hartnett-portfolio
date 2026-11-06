@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { ArrowUpRight, ArrowDown } from "lucide-react";
 import { HeroArtwork } from "@/components/interactive";
+import { CinematicEntry, StarSprinkles } from "@/components/cinematic-entry";
+import { ScrollChapters, Chapter } from "@/components/scroll-chapters";
 import { Spotlight } from "@/components/ui/spotlight";
 import {
   Philosophy,
@@ -15,13 +17,12 @@ import {
 export default function Home() {
   return (
     <main id="main">
+      <CinematicEntry />
+      <StarSprinkles />
       <section className="hero">
         <Spotlight className="hero-spotlight" fill="#a66bff" />
         <div className="shell hero-layout">
           <div className="hero-copy">
-            <span className="eyebrow hero-eyebrow">
-              <i /> AI Collaborative Software Engineer
-            </span>
             <h1>
               Ideas into
               <br />
@@ -55,16 +56,32 @@ export default function Home() {
           </a>
         </div>
       </section>
-      <div id="philosophy">
-        <Philosophy />
-      </div>
-      <Capabilities />
-      <SelectedWork />
-      <AISection />
-      <ResponsibleAI />
-      <Toolkit />
-      <AboutSection />
-      <ContactSection />
+      <ScrollChapters>
+        <Chapter id="philosophy">
+          <Philosophy />
+        </Chapter>
+        <Chapter>
+          <Capabilities />
+        </Chapter>
+        <Chapter>
+          <SelectedWork />
+        </Chapter>
+        <Chapter>
+          <AISection />
+        </Chapter>
+        <Chapter>
+          <ResponsibleAI />
+        </Chapter>
+        <Chapter>
+          <Toolkit />
+        </Chapter>
+        <Chapter>
+          <AboutSection />
+        </Chapter>
+        <Chapter>
+          <ContactSection />
+        </Chapter>
+      </ScrollChapters>
     </main>
   );
 }
