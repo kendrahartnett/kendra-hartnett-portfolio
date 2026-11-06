@@ -265,6 +265,15 @@ export function ResponsibleAI() {
           <Link className="text-link" href="/projects/ethical-apple">
             Predictable planning in Ethical Apple <ArrowUpRight size={17} />
           </Link>
+          <div className="responsibility-art">
+            <Image
+              src="/images/kendra-signature.png"
+              alt="Kendra Hartnett name in violet and gold orbital light"
+              width={618}
+              height={356}
+              sizes="(max-width: 760px) 90vw, 450px"
+            />
+          </div>
         </div>
         <div className="principles">
           {[
@@ -381,31 +390,24 @@ export function AboutSection({ full = false }: { full?: boolean }) {
           title="The builder behind the ideas."
         />
         <p>
-          I'm a Full-Stack Developer and AI-Augmented Builder who turns ideas
-          into meaningful, functional technology.
+          I'm a Full-Stack Developer and AI-Augmented Builder who enjoys
+          bringing ideas to life through technology.
         </p>
         <p>
           I approach development through both an engineering and creative lens.
-          I love the process of solving problems, designing intuitive user
-          experiences, exploring new possibilities, and bringing products from
-          concept to reality. For me, building software isn't just about making
-          things work. It's about making them work well, feel intuitive, and
-          serve a purpose.
+          I enjoy designing thoughtful user experiences, exploring new
+          possibilities, and bringing ideas from concept to reality. To me,
+          building software isn't just about making things work. It's about
+          creating solutions that work well, feel intuitive, and serve a
+          purpose.
         </p>
         <p>
-          Curiosity drives the way I think and build. I'm drawn to understanding
-          how things work, questioning assumptions, recognizing opportunities,
-          and finding better ways to solve problems. I care about the details
-          just as much as the bigger picture—from application architecture and
-          functionality to visual design, interactions, and the overall user
-          experience.
-        </p>
-        <p>
-          My work spans full-stack application development, AI integration,
-          workflow automation, and UI/UX design. I'm particularly interested in
-          the intersection of human creativity and emerging technology, and how
-          thoughtful engineering can make everyday processes more useful,
-          accessible, and efficient.
+          Curiosity shapes the way I think and build. I'm naturally drawn to
+          understanding how things work, questioning assumptions, spotting
+          opportunities, and finding better ways to solve problems. I pay
+          attention to both the bigger picture and the little details, from
+          application architecture and functionality to visual design,
+          interactions, and the overall user experience.
         </p>
         <p>
           My path into technology hasn't been traditional. I chose to give
@@ -417,22 +419,15 @@ export function AboutSection({ full = false }: { full?: boolean }) {
           willingness to think differently.
         </p>
         <p>
-          The Next Chapter Project is an important part of that journey,
-          alongside my independent work.
-        </p>
-        <p>
-          I'm also building EEVORA, my independent product venture, where I
-          explore ideas, identify opportunities, and develop technology around
-          real-world problems.
-        </p>
-        <p>
           I believe great software brings together logic and creativity,
-          functionality and experience, technology and human understanding. I
+          functionality and experience, technology with human understanding. I
           take the engineering seriously, but I also believe there's room for
           imagination, experimentation, and a little magic along the way.
         </p>
         <p className="personal-motto">
-          I think critically. I create boldly. I build purposefully.
+          <strong>
+            I think critically. I create boldly. I build purposefully.
+          </strong>
         </p>
         <Link className="text-link" href={full ? "/projects" : "/about"}>
           {full ? "Explore the work" : "A little more about me"}{" "}
