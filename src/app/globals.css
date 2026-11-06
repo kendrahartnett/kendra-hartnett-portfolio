@@ -1791,70 +1791,6 @@ em {
     transform: translateY(-8px);
   }
 }
-.cinematic-entry {
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  display: grid;
-  place-items: center;
-  background: #0d0814;
-  pointer-events: none;
-  animation: entry-exit 0.65s ease 1.4s both;
-}
-.entry-halo {
-  position: absolute;
-  width: min(85vw, 680px);
-  aspect-ratio: 1;
-  background: radial-gradient(
-    ellipse,
-    #a35ce232,
-    #d5a04c0e 40%,
-    transparent 68%
-  );
-  animation: halo-open 1.5s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-.entry-monogram {
-  position: relative;
-  width: min(84vw, 554px);
-  height: auto;
-  animation: monogram-open 1s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
-}
-.entry-skip {
-  position: absolute;
-  bottom: 32px;
-  right: 5%;
-  color: #dacbe4;
-  border: 1px solid #755c89;
-  padding: 10px 16px;
-  background: #110b1b;
-  pointer-events: auto;
-}
-@keyframes halo-open {
-  from {
-    opacity: 0;
-    transform: scale(0.3);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-@keyframes monogram-open {
-  from {
-    opacity: 0;
-    transform: scale(0.92);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-@keyframes entry-exit {
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
 .chapter-light {
   background: linear-gradient(
     90deg,
@@ -1915,9 +1851,6 @@ em {
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .cinematic-entry {
-    display: none;
-  }
   .star-sprinkles i {
     animation: none;
   }
@@ -1933,17 +1866,6 @@ em {
     width: 100%;
     margin-left: 2%;
   }
-}
-.intro-replay {
-  position: fixed;
-  right: 18px;
-  bottom: 18px;
-  z-index: 101;
-  padding: 8px 12px;
-  background: #21152e;
-  border: 1px solid #a380bb;
-  color: #f4e9fc;
-  font-size: 12px;
 }
 .hero-art.personal-art {
   isolation: auto;

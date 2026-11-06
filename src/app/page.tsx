@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight, ArrowDown } from "lucide-react";
 import { HeroArtwork } from "@/components/interactive";
-import { CinematicEntry, StarSprinkles } from "@/components/cinematic-entry";
+import { StarSprinkles } from "@/components/star-sprinkles";
 import { ScrollChapters, Chapter } from "@/components/scroll-chapters";
 import { Spotlight } from "@/components/ui/spotlight";
 import {
@@ -17,7 +17,6 @@ import {
 export default function Home() {
   return (
     <main id="main">
-      <CinematicEntry />
       <StarSprinkles />
       <section className="hero">
         <Spotlight className="hero-spotlight" fill="#a66bff" />
