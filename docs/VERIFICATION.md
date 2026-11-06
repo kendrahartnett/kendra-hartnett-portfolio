@@ -27,3 +27,4 @@ Revision: updated professional title and supplied About copy; removed the standa
 - Reduced motion skips decorative entrance/reveals and defaults the GIF to hidden with an explicit show control. A GIF cannot be paused natively without altering/replacing it, so the control truthfully hides/shows it.
 - Preview /?intro=replay to expose a development replay button. Normal visits play at most once per tab session; an asset still loading at hydration bypasses the decorative intro. Storage denial is handled without preventing access.
 - User-provided personal narrative supersedes earlier student-oriented About text. Added UI/UX capability; project implementation claims remain grounded in the existing verification notes.
+`nHero sizing follow-up: desktop headline 144→122px maximum, artwork 760→646px maximum with viewport-height cap. Browser check at 1906×905: artwork bottom851px, buttons bottom768px. Build passed.
