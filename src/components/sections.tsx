@@ -255,30 +255,37 @@ export function ResponsibleAI() {
             <em>Build with responsibility.</em>
           </h2>
           <p>
-            AI belongs where it adds value. Good engineering also means knowing
-            when a simpler, predictable solution is better.
+            I approach AI as a capability to evaluate, not an authority to trust.
+            My starting questions are practical: does this need AI, what could
+            go wrong, what data does it need, and what happens when it fails?
+            Responsible integration means designing those boundaries before
+            giving a model access to people's information or real-world actions.
           </p>
           <Link className="text-link" href="/projects/ethical-apple">
-            A practical example: Ethical Apple <ArrowUpRight size={17} />
+            Predictable planning in Ethical Apple <ArrowUpRight size={17} />
           </Link>
         </div>
         <div className="principles">
           {[
             [
-              "Purpose before tools",
-              "Choose AI when it meaningfully improves the solution.",
+              "Guardrails beyond the prompt",
+              "Define allowed tasks, validate inputs and outputs, and restrict tool permissions in application code. Treat uploaded content and model responses as untrusted; a prompt alone is not a security boundary.",
             ],
             [
-              "People in control",
-              "Keep human review in consequential decisions.",
+              "Safe fallbacks, clear limits",
+              "Plan for timeouts, unavailable models, and invalid responses. Use predictable rules or a manual workflow where possible; otherwise stop safely, explain the limitation, and let a person take over.",
             ],
             [
-              "Privacy & security by design",
-              "Minimize sensitive data and protect credentials.",
+              "Human judgment stays in control",
+              "Keep AI suggestions distinct from approved actions. Require review before consequential changes, make uncertainty visible, and give people a way to correct or reject an output.",
             ],
             [
-              "Validate, then trust",
-              "Test outputs, communicate limits, and prefer deterministic logic where appropriate.",
+              "Security & privacy by design",
+              "Send only necessary data, keep secrets on the server, and enforce authentication and authorization outside the model. Limit access, redact sensitive logs, and consider data retention before choosing an integration.",
+            ],
+            [
+              "Evaluate the failure cases",
+              "Test more than the happy path: misleading outputs, biased responses, prompt injection, malformed data, and service failures. Check whether guardrails and fallback paths behave as intended, and revisit them as the system changes.",
             ],
           ].map(([t, d]) => (
             <div key={t}>
