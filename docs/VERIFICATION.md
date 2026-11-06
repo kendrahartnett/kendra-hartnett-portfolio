@@ -28,3 +28,10 @@ Revision: updated professional title and supplied About copy; removed the standa
 - Preview /?intro=replay to expose a development replay button. Normal visits play at most once per tab session; an asset still loading at hydration bypasses the decorative intro. Storage denial is handled without preventing access.
 - User-provided personal narrative supersedes earlier student-oriented About text. Added UI/UX capability; project implementation claims remain grounded in the existing verification notes.
 `nHero sizing follow-up: desktop headline 144→122px maximum, artwork 760→646px maximum with viewport-height cap. Browser check at 1906×905: artwork bottom851px, buttons bottom768px. Build passed.
+
+## Portfolio refresh — November 6, 2026
+
+- Removed Just Doing the Books from the shared project data and deleted its unused image assets. The export check confirms its detail route is absent; four project routes remain.
+- Added Kendra's supplied LinkedIn URL to the Contact buttons and footer.
+- Added the supplied Kendra Hartnett artwork between About and Contact. The existing GSAP chapter reveal fades it into view on scroll; mobile keeps its full aspect ratio.
+- Production build and export check pass: nine pages and 271 local link/asset references. Desktop and 390px mobile previews were visually reviewed, including the new image and mobile contact buttons.

@@ -11,7 +11,7 @@ import {
   ShieldCheck,
   GitBranch as Github,
 } from "lucide-react";
-import { projects, github } from "@/lib/projects";
+import { projects, github, linkedin } from "@/lib/projects";
 import { GlowFrame, ProblemLab } from "./interactive";
 export function SectionTitle({
   number,
@@ -194,7 +194,7 @@ export function SelectedWork() {
         <p>
           A selection of independent products,
           <br />
-          community tools, and business websites.
+          community tools, and practical prototypes.
         </p>
       </div>
       <ProjectGrid />
@@ -255,11 +255,12 @@ export function ResponsibleAI() {
             <em>Build with responsibility.</em>
           </h2>
           <p>
-            I approach AI as a capability to evaluate, not an authority to trust.
-            My starting questions are practical: does this need AI, what could
-            go wrong, what data does it need, and what happens when it fails?
-            Responsible integration means designing those boundaries before
-            giving a model access to people's information or real-world actions.
+            I approach AI as a capability to evaluate, not an authority to
+            trust. My starting questions are practical: does this need AI, what
+            could go wrong, what data does it need, and what happens when it
+            fails? Responsible integration means designing those boundaries
+            before giving a model access to people's information or real-world
+            actions.
           </p>
           <Link className="text-link" href="/projects/ethical-apple">
             Predictable planning in Ethical Apple <ArrowUpRight size={17} />
@@ -478,6 +479,14 @@ export function ContactSection({
             rel="noreferrer"
           >
             <Github size={17} /> Find me on GitHub
+          </a>
+          <a
+            className="button secondary"
+            href={linkedin}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Connect on LinkedIn <ArrowUpRight size={17} />
           </a>
         </div>
         <span className="contact-note">

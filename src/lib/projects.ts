@@ -143,34 +143,7 @@ export const projects: Project[] = [
       "Prices are illustrative planning estimates, not checkout quotes. Distances are fixed examples. Dietary tags are preferences, not allergy or nutrition guidance. No runtime AI model or live pricing API.",
     role: "Authored by Kendra Hartnett for the Next Chapter Project. The planning module documents her own decision logic.",
   },
-  {
-    slug: "just-doing-the-books",
-    name: "Just Doing the Books",
-    category: "Business website · Frontend development",
-    summary:
-      "A clear, focused web presence for a bookkeeping and tax service, connecting visitors with services, background, and contact information.",
-    status: "Deployed website",
-    image: "just-doing-the-books.png",
-    alt: "Authentic Just Doing the Books business website screenshot",
-    live: "https://just-doing-the-books.vercel.app/",
-    repo: "https://github.com/kendrahartnett/just-doing-the-books",
-    stack: ["HTML", "CSS", "JavaScript"],
-    problem:
-      "A small bookkeeping and tax service needed an understandable online introduction and a direct way for visitors to take the next step.",
-    audience:
-      "Personal and small-business clients exploring the services of Joanna Plues in Payson, Arizona.",
-    features: [
-      "Three focused sections: services, about, and get in touch.",
-      "A direct email call to action.",
-      "A lightweight single-page layout without a framework.",
-    ],
-    architecture:
-      "Static HTML, CSS, and vanilla JavaScript. There is no application backend or financial-record processing workflow.",
-    decision:
-      "Work within a deliberately constrained brief: communicate the service, maintain three sections, and provide one clear primary action.",
-    limits:
-      "This is a business marketing website, not bookkeeping software or a financial advice application. Email links rely on a configured email client.",
-    role: "Built by Kendra Hartnett for Joanna Plues as part of the Next Chapter Project AI-Augmented Builders program.",
-  },
 ];
 export const github = "https://github.com/kendrahartnett";
+export const linkedin =
+  "https://www.linkedin.com/in/kendra-hartnett-7877ab422/";

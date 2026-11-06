@@ -7,13 +7,9 @@ const routes = [
   "about",
   "ai-automation",
   "contact",
-  ...[
-    "eevora",
-    "the-bridge",
-    "goodneighbor",
-    "ethical-apple",
-    "just-doing-the-books",
-  ].map((slug) => "projects/" + slug),
+  ...["eevora", "the-bridge", "goodneighbor", "ethical-apple"].map(
+    (slug) => "projects/" + slug,
+  ),
 ];
 let checked = 0;
 for (const route of routes) {
@@ -47,8 +43,14 @@ assert.equal(
   null,
   "Removed standalone project must not export",
 );
+assert.equal(
+  await stat("out/projects/just-doing-the-books/index.html").catch(() => null),
+  null,
+  "Removed business project must not export",
+);
 const catalog = await readFile("out/projects/index.html", "utf8");
 assert.doesNotMatch(catalog, /href="\/projects\/eevoradocs/);
+assert.doesNotMatch(catalog, /href="\/projects\/just-doing-the-books/);
 assert.match(catalog, /href="\/projects\/eevora/);
 const apple = await readFile("out/projects/ethical-apple/index.html", "utf8");
 assert.match(apple, /not checkout quotes/);

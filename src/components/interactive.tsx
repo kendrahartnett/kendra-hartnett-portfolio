@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { MotionConfig, motion, useReducedMotion } from "motion/react";
 import { BorderBeam } from "./ui/border-beam";
-import { github } from "@/lib/projects";
+import { github, linkedin } from "@/lib/projects";
 const nav = [
   ["Projects", "/projects"],
   ["About", "/about"],
@@ -91,6 +91,9 @@ export function Footer() {
       <div>
         <a href={github} target="_blank" rel="noreferrer">
           GitHub <ArrowUpRight size={14} />
+        </a>
+        <a href={linkedin} target="_blank" rel="noreferrer">
+          LinkedIn <ArrowUpRight size={14} />
         </a>
         <Link href="/contact">
           Let’s connect <ArrowUpRight size={14} />

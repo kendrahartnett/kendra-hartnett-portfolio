@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight, ArrowDown } from "lucide-react";
 import { HeroArtwork } from "@/components/interactive";
 import { CinematicEntry, StarSprinkles } from "@/components/cinematic-entry";
@@ -77,6 +78,17 @@ export default function Home() {
         </Chapter>
         <Chapter>
           <AboutSection />
+        </Chapter>
+        <Chapter>
+          <div className="signature-art shell">
+            <Image
+              src="/images/kendra-signature.png"
+              alt="Kendra Hartnett name in violet and gold orbital light"
+              width={618}
+              height={356}
+              sizes="(max-width: 760px) 90vw, 760px"
+            />
+          </div>
         </Chapter>
         <Chapter>
           <ContactSection />
