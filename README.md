@@ -1,36 +1,52 @@
-# Kendra Hartnett portfolio
+# Kendra Hartnett — Portfolio
 
-Next.js App Router, React, TypeScript, and Tailwind CSS. Static export supports Vercel and static hosting. All four current projects have data-driven detail pages.
+![Kendra Hartnett portfolio homepage, showing the Ideas into Impact headline and animated KH artwork](docs/portfolio-preview.png)
 
-## Run
+A personal portfolio for Kendra Hartnett, an AI Collaborative Software Engineer. It presents selected application and product work, an approach to practical and responsible AI, and the thinking behind the work.
 
-```sh
+**Domain:** [www.kendrahartnett.com](https://www.kendrahartnett.com) — connection in progress.
+
+## Features
+
+- Responsive pages for the home, projects, About, AI and automation, and contact sections.
+- Project cards and individual case-study pages for EEVORA, The Bridge, GoodNeighbor, and Ethical Apple.
+- An animated KH hero and welcome sequence using Kendra's supplied artwork, with scroll reveals and reduced-motion support.
+- Interactive AI and automation scenarios that are explicitly presented as conceptual demonstrations.
+- A responsible AI section covering guardrails, safe fallbacks, human review, security, privacy, and failure-case evaluation.
+- Static export, sitemap, robots metadata, and an export check for routes, links, and assets.
+
+## About me
+
+I'm a Full-Stack Developer and AI-Augmented Builder who enjoys bringing ideas to life through technology. I approach development through both an engineering and creative lens, with care for intuitive experiences and solutions that serve a purpose.
+
+My path into technology hasn't been traditional. A second chance to pursue something new has shaped how I approach challenges: with curiosity, resourcefulness, adaptability, and a willingness to think differently.
+
+**I think critically. I create boldly. I build purposefully.**
+
+## Built with
+
+Next.js App Router, React, TypeScript, and Tailwind CSS. The interface also uses GSAP, Motion, an Aceternity UI Spotlight component, and a Magic UI Border Beam component. Fonts are bundled locally. See [third-party notices](THIRD_PARTY_NOTICES.md) for component origins.
+
+## Run locally
+
+```bash
 npm ci
 npm run dev
-npm run typecheck
-npm run build
 ```
 
-Set `NEXT_PUBLIC_SITE_URL` to the deployment origin before building for correct sitemap and social metadata. `.env.local` is ignored. The output directory is `out/`. The contact CTA links to the existing EEVORA contact page; this portfolio collects no form submissions.
+Open `http://127.0.0.1:3000`. For a production build and local preview:
 
-## Design dependencies
+```bash
+npm run typecheck
+npm run build
+npm run check:export
+npm start
+```
 
-- Aceternity UI Spotlight: source component from its official registry.
-- Magic UI Border Beam: source component from its official registry, powered by Motion.
-- GSAP: scoped hero artwork animation with cleanup, pause control, and reduced-motion support.
-- Motion: card interaction and border animation; reduced-motion aware.
-- Tailwind CSS 4: styling pipeline and source-component utilities.
-- Locally bundled Space Grotesk, Inter, and JetBrains Mono fonts.
-- Three.js / React Three Fiber were optional and are intentionally not installed; this design does not require WebGL.
+The static site is written to `out/`; `npm start` serves the export at `http://127.0.0.1:3107`. Set `NEXT_PUBLIC_SITE_URL` to the final deployment origin before building so the sitemap and social metadata use the correct URL. No database or API credentials are required for this portfolio. Contact links lead to the EEVORA contact page; the portfolio does not collect form submissions.
 
-See `THIRD_PARTY_NOTICES.md` for component origins. `src/lib/projects.ts` is the content source; `docs/CONTENT_VERIFICATION.md` records evidence and boundaries. Original image assets and optimized WebP versions are in `public/images`.
+Project content is maintained in [`src/lib/projects.ts`](src/lib/projects.ts). [Content verification](docs/CONTENT_VERIFICATION.md) records the evidence and limits behind project descriptions, and [verification notes](docs/VERIFICATION.md) explain the build checks.
 
-## Deployment
+## Author
 
-For Vercel: import the repository, select Next.js, and set `NEXT_PUBLIC_SITE_URL` to the final domain. No database or API credentials are required. The private Sites preview uses `.openai/hosting.json` with the exported `out` directory. Production hosting should serve `404.html` for unknown paths.
-
-## Content still welcome
-
-A public contact email was not supplied, so the contact CTA uses EEVORA. The supplied LinkedIn URL appears in the contact section and footer. EEVORADocs is labeled in development and its current website workflow is explicitly illustrative. Future updates should distinguish new implementation from plans.
-
-Run npm start after a build for the production preview at http://127.0.0.1:3107. Run npm run check:export to check the exported routes and asset links. See docs/VERIFICATION.md for checks and limits.
+**Kendra Hartnett** · [LinkedIn](https://www.linkedin.com/in/kendra-hartnett-7877ab422/) · [GitHub](https://github.com/kendrahartnett)
