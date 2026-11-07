@@ -39,6 +39,14 @@ export default function Home() {
               <Link className="button secondary" href="/contact">
                 Let’s build something <ArrowUpRight size={17} />
               </Link>
+              <a
+                className="button secondary"
+                href="/resume/Kendra-Hartnett-Resume.pdf"
+                download
+                aria-label="Download Kendra Hartnett resume PDF"
+              >
+                Download Resume <ArrowDown size={17} />
+              </a>
             </div>
           </div>
           <HeroArtwork />

@@ -50,7 +50,7 @@ export function Navigation() {
             height={40}
             alt="KH"
           />
-          <span>AI Collaborative Software Engineer</span>
+          <span>Full-Stack Developer | AI-Augmented Software Engineer</span>
         </Link>
         <button
           className="menu-toggle"

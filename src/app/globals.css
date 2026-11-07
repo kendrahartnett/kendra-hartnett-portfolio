@@ -126,6 +126,9 @@ em {
   object-fit: cover;
   border-radius: 50%;
 }
+.site-header .brand span {
+  white-space: nowrap;
+}
 .nav-links {
   display: flex;
   align-items: center;
@@ -483,6 +486,9 @@ em {
 }
 .work {
   padding-top: 45px;
+}
+.work .section-heading em {
+  color: var(--lavender);
 }
 .heading-row {
   display: flex;
@@ -1311,6 +1317,13 @@ em {
     width: 47px;
     height: 38px;
   }
+  .site-header .brand span {
+    max-width: min(220px, calc(100vw - 155px));
+    white-space: normal;
+    font-size: 10px;
+    line-height: 1.25;
+    letter-spacing: 0.025em;
+  }
   .brand-sub {
     font-size: 6px;
   }
@@ -1760,16 +1773,18 @@ em {
   }
   .hero .button-row {
     margin-top: clamp(27px, 2.08vw, 40px);
-    gap: clamp(16px, 1.15vw, 22px);
+    gap: 10px;
+    flex-wrap: nowrap;
   }
   .hero .button {
-    font-size: clamp(12px, 0.95vw, 18px);
-    padding: clamp(14px, 1.06vw, 20px) clamp(19px, 1.51vw, 29px);
-    gap: 28px;
+    font-size: clamp(10px, 0.9vw, 15px);
+    padding: clamp(12px, 1.06vw, 20px) clamp(10px, 1vw, 20px);
+    gap: 10px;
+    white-space: nowrap;
   }
   .hero .button svg {
-    width: 22px;
-    height: 22px;
+    width: 17px;
+    height: 17px;
   }
   .hero-art {
     position: absolute;

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import type { CSSProperties } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import {
   SiAnthropic,
   SiCss,
@@ -38,7 +38,7 @@ export function SectionTitle({
 }: {
   number: string;
   label: string;
-  title: string;
+  title: ReactNode;
   copy?: string;
 }) {
   return (
@@ -205,8 +205,14 @@ export function SelectedWork() {
       <div className="heading-row">
         <SectionTitle
           number="01"
-          label="SELECTED WORK"
-          title="Ideas brought to life."
+          label="Ideas brought to life."
+          title={
+            <>
+              Building what
+              <br />
+              <em>could be.</em>
+            </>
+          }
         />
         <p>
           A selection of independent products,
