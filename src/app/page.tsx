@@ -41,7 +41,7 @@ export default function Home() {
               </Link>
               <a
                 className="button secondary"
-                href="/resume/Kendra-Hartnett-Resume.pdf"
+                href="/resume/KendraAnneHartnettResume.pdf"
                 download
                 aria-label="Download Kendra Hartnett resume PDF"
               >
