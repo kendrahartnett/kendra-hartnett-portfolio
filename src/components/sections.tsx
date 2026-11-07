@@ -442,7 +442,7 @@ export function ContactSection({
         <ContactForm />
         <div className="button-row contact-socials">
           <a
-            className="button secondary"
+            className="button secondary gold-accent"
             href={github}
             target="_blank"
             rel="noreferrer"
@@ -450,7 +450,7 @@ export function ContactSection({
             <Github size={17} /> Find me on GitHub
           </a>
           <a
-            className="button secondary"
+            className="button secondary resume-glow"
             href={linkedin}
             target="_blank"
             rel="noreferrer"
