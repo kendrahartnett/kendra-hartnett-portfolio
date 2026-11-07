@@ -208,8 +208,7 @@ export function SelectedWork() {
           label="Ideas brought to life."
           title={
             <>
-              Building what
-              <br />
+              Building what{" "}
               <em>could be.</em>
             </>
           }
