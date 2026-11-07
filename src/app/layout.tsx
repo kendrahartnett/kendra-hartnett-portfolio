@@ -8,13 +8,13 @@ const origin = process.env.NEXT_PUBLIC_SITE_URL;
 export const metadata: Metadata = {
   ...(origin ? { metadataBase: new URL(origin) } : {}),
   title: {
-    default: "Kendra Hartnett — Ideas into Impact",
+    default: "Kendra Hartnett - Thoughtful Builder",
     template: "%s | Kendra Hartnett",
   },
   description:
     "Full-stack developer and AI-augmented builder. Purposeful applications, practical AI, and independent products by Kendra Hartnett.",
   openGraph: {
-    title: "Kendra Hartnett — Ideas into Impact",
+    title: "Kendra Hartnett - Thoughtful Builder",
     description: "Purposeful technology. Thoughtfully built.",
     images: [
       {
