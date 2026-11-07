@@ -404,10 +404,11 @@ export function AboutSection({ full = false }: { full?: boolean }) {
             I think critically. I create boldly. I build purposefully.
           </strong>
         </p>
-        <Link className="text-link" href={full ? "/projects" : "/about"}>
-          {full ? "Explore the work" : "A little more about me"}{" "}
-          <ArrowUpRight size={18} />
-        </Link>
+        {full && (
+          <Link className="text-link" href="/projects">
+            Explore the work <ArrowUpRight size={18} />
+          </Link>
+        )}
       </div>
     </section>
   );
