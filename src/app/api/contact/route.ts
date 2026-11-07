@@ -1,3 +1,5 @@
+import { reserveContactSubmission } from "@/lib/contact-rate-limit";
+
 const maxBodyBytes = 8_000;
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -44,6 +46,24 @@ export async function POST(request: Request) {
   const to = process.env.CONTACT_TO_EMAIL;
   if (!key || !from || !to) return fail("The contact form is not configured yet. Please use LinkedIn to get in touch.", 503);
 
+  // Both keys matter: a visitor cannot bypass the email limit by changing IP,
+  // and cannot bypass the IP limit by changing the email field.
+  const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim()
+    || request.headers.get("x-real-ip")?.trim();
+  const keys = [`email:${email.toLowerCase()}`, ...(ip ? [`ip:${ip}`] : [])];
+  const reservations: Array<() => void> = [];
+  for (const limitKey of keys) {
+    const result = reserveContactSubmission(limitKey);
+    if (!result.allowed) {
+      reservations.forEach((release) => release());
+      return Response.json(
+        { message: "Please wait a few minutes before sending another message.", retryAfterSeconds: result.retryAfterSeconds },
+        { status: 429, headers: { "Retry-After": String(result.retryAfterSeconds), "Cache-Control": "no-store" } },
+      );
+    }
+    reservations.push(result.release);
+  }
+
   try {
     const response = await fetch("https://api.resend.com/emails", {
       method: "POST",
@@ -57,9 +77,13 @@ export async function POST(request: Request) {
       }),
       cache: "no-store",
     });
-    if (!response.ok) return fail("Your message could not be sent right now. Please try again later or connect on LinkedIn.", 502);
+    if (!response.ok) {
+      reservations.forEach((release) => release());
+      return fail("Your message could not be sent right now. Please try again later or connect on LinkedIn.", 502);
+    }
     return Response.json({ message: "Message sent. Thank you for reaching out!" }, { headers: { "Cache-Control": "no-store" } });
   } catch {
+    reservations.forEach((release) => release());
     return fail("Your message could not be sent right now. Please try again later or connect on LinkedIn.", 502);
   }
 }

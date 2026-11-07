@@ -45,6 +45,8 @@ npm start
 
 The contact endpoint requires a server-capable Next.js host. The existing Sites static-export hosting configuration cannot serve it; migrate hosting or provide a separate server endpoint before publishing this version.
 
+The form includes server-side validation, a honeypot, a minimum completion time, and a five-minute repeat-submission cooldown. The server cooldown currently uses process memory, so it is only reliable on a single long-running server. Before public deployment on serverless hosting, add a shared rate limit or a host firewall rule and consider Cloudflare Turnstile with server-side token verification. The disabled submit button is user feedback, not a security boundary.
+
 Project content is maintained in [`src/lib/projects.ts`](src/lib/projects.ts). [Content verification](docs/CONTENT_VERIFICATION.md) records the evidence and limits behind project descriptions, and [verification notes](docs/VERIFICATION.md) explain the build checks.
 
 ## Author
