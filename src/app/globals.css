@@ -279,7 +279,8 @@ em {
   transition:
     background 0.2s,
     transform 0.2s,
-    border-color 0.2s;
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 .button:hover {
   transform: translateY(-2px);
@@ -300,6 +301,19 @@ em {
 }
 .button.secondary:hover {
   border-color: #b08bc7;
+}
+.button.gold-accent {
+  border-color: var(--gold);
+  box-shadow: 0 0 18px #e8be8d24, inset 0 0 12px #e8be8d0d;
+}
+.button.gold-accent:hover {
+  border-color: #f5d6a8;
+  background: #e8be8d14;
+  box-shadow: 0 0 26px #e8be8d40, inset 0 0 14px #e8be8d14;
+}
+.button.resume-glow:hover {
+  border-color: var(--purple);
+  box-shadow: 0 0 22px #a66bff40;
 }
 .hero-art {
   position: relative;

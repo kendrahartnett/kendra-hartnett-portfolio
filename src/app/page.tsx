@@ -36,11 +36,11 @@ export default function Home() {
               <Link className="button primary" href="/projects">
                 Explore my work <ArrowUpRight size={17} />
               </Link>
-              <Link className="button secondary" href="/contact">
+              <Link className="button secondary gold-accent" href="/contact">
                 Let’s build something <ArrowUpRight size={17} />
               </Link>
               <a
-                className="button secondary"
+                className="button secondary resume-glow"
                 href="/resume/KendraAnneHartnettResume.pdf"
                 download
                 aria-label="Download Kendra Hartnett resume PDF"
