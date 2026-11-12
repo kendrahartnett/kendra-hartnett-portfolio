@@ -23,15 +23,14 @@ export default function Home() {
           <div className="hero-copy">
             <TypedHeroHeading />
             <p className="hero-lead">
-              I build purposeful technology
-              <br />
-              for a world of possibilities.
+              I build technology with intention.
             </p>
             <p className="hero-description">
-              I combine full-stack development, practical AI, and thoughtful
-              automation to solve meaningful problems and build technology
-              people can use.
+              I build full-stack applications and practical AI systems with
+              thoughtful interfaces, reliable backend architecture, and
+              human-centered safeguards.
             </p>
+            <p className="hero-opportunity">Open to full-stack, AI application, and product-focused developer roles.</p>
             <div className="button-row">
               <Link className="button primary" href="/projects">
                 Explore my work <ArrowUpRight size={17} />

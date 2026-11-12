@@ -76,8 +76,8 @@ export function ContactForm() {
         </div>
       </div>
       <div className="contact-field">
-        <label htmlFor={`${id}-subject`}>Subject</label>
-        <input id={`${id}-subject`} name="subject" required maxLength={150} />
+        <label htmlFor={`${id}-subject`}>Subject (optional)</label>
+        <input id={`${id}-subject`} name="subject" maxLength={150} />
       </div>
       <div className="contact-field">
         <label htmlFor={`${id}-message`}>Message</label>

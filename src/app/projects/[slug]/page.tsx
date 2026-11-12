@@ -4,6 +4,14 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { projects } from "@/lib/projects";
+import { caseSections } from "@/lib/case-studies";
+
+const workflowSteps: Record<string, string[]> = {
+  "the-bridge": ["Post a need", "Run privacy checks", "Review uncertain drafts", "Approved organization claims", "Poster marks fulfilled"],
+  "ethical-apple": ["Enter budget and household", "Choose meals with rules", "Adjust for pantry quantities", "Review list and estimates"],
+  eevora: ["Explore a service", "Inspect illustrative workflow", "Pause for human review", "Contact EEVORA"],
+  goodneighbor: ["Search verified listings", "Filter by place or cause", "Check the source", "Visit the organizer"],
+};
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
@@ -24,7 +32,9 @@ export default async function ProjectPage({
   const { slug } = await params;
   const p = projects.find((p) => p.slug === slug);
   if (!p) notFound();
+  const previous = projects[(projects.indexOf(p) - 1 + projects.length) % projects.length];
   const next = projects[(projects.indexOf(p) + 1) % projects.length];
+  const sections = caseSections(p);
   return (
     <main id="main">
       <section className="shell case-intro">
@@ -40,9 +50,11 @@ export default async function ProjectPage({
             {p.status}
           </span>
           <span>
-            {p.flagship
-              ? "FLAGSHIP INDEPENDENT PRODUCT"
-              : "SELECTED PORTFOLIO WORK"}
+            {p.slug === "the-bridge"
+              ? "FEATURED FULL-STACK APPLICATION"
+              : p.flagship
+                ? "INDEPENDENT PRODUCT DIRECTION"
+                : "SELECTED PORTFOLIO WORK"}
           </span>
         </div>
         <div className="button-row">
@@ -66,6 +78,12 @@ export default async function ProjectPage({
             Explore source <ArrowUpRight size={17} />
           </a>
         </div>
+        <div className="case-workflow" aria-label={`${p.name} documented workflow`}>
+          <span className="eyebrow">WORKFLOW AT A GLANCE · DOCUMENTED IMPLEMENTATION</span>
+          <ol>
+            {workflowSteps[p.slug].map((step) => <li key={step}>{step}</li>)}
+          </ol>
+        </div>
         <figure className="case-image">
           <Image
             src={`/images/${p.image.replace(".png", ".webp")}`}
@@ -78,8 +96,9 @@ export default async function ProjectPage({
           <figcaption>
             {p.slug === "the-bridge"
               ? "Original project artwork"
-              : "Project image from the source repository"}{" "}
-            · Preserving the project’s own visual identity
+              : p.slug === "goodneighbor"
+                ? "Homepage screenshot from the project repository; the original capture includes a development indicator"
+                : "Project image from the source repository"}
           </figcaption>
         </figure>
       </section>
@@ -100,52 +119,32 @@ export default async function ProjectPage({
               Repository documentation <ArrowUpRight size={14} />
             </a>
             <p className="source-note">
-              Reviewed November 5, 2026. Descriptions reflect documented
-              implementation, not independently measured outcomes.
+              Descriptions reflect repository documentation and implementation,
+              not independently measured outcomes.
             </p>
           </aside>
           <div className="case-story">
-            <section>
-              <span className="eyebrow">01 / THE PROBLEM</span>
-              <h2>Start with a real need.</h2>
-              <p>{p.problem}</p>
-              <h3>Who it is for</h3>
-              <p>{p.audience}</p>
-            </section>
-            <section>
-              <span className="eyebrow">02 / THE SOLUTION</span>
-              <h2>
-                {p.slug === "eevoradocs"
-                  ? "What the demonstration shows."
-                  : "What is implemented."}
-              </h2>
-              <ul>
-                {p.features.map((f) => (
-                  <li key={f}>{f}</li>
-                ))}
-              </ul>
-            </section>
-            <section>
-              <span className="eyebrow">03 / THE ENGINEERING</span>
-              <h2>How it comes together.</h2>
-              <p>{p.architecture}</p>
-              <h3>The important decision</h3>
-              <p>{p.decision}</p>
-            </section>
-            <section>
-              <span className="eyebrow">04 / STATUS & BOUNDARIES</span>
-              <h2>Clear about what it does.</h2>
-              <p>{p.limits}</p>
-            </section>
+            {sections.map((section) => (
+              <section key={section.label}>
+                <span className="eyebrow">{section.label}</span>
+                <h2>{section.title}</h2>
+                {section.body && <p>{section.body}</p>}
+                {section.bullets && <ul>{section.bullets.map((item) => <li key={item}>{item}</li>)}</ul>}
+                {section.source && <a className="case-source-link" href={section.source.url} target="_blank" rel="noreferrer">{section.source.label} <ArrowUpRight size={15} /></a>}
+              </section>
+            ))}
           </div>
         </div>
       </section>
-      <div className="shell next-project">
-        <span className="eyebrow">EXPLORE THE NEXT PROJECT</span>
-        <Link href={`/projects/${next.slug}`}>
-          {next.name}
-          <ArrowUpRight />
-        </Link>
+      <div className="shell case-navigation">
+        <div className="next-project">
+          <span className="eyebrow">PREVIOUS PROJECT</span>
+          <Link href={`/projects/${previous.slug}`}><ArrowLeft /> {previous.name}</Link>
+        </div>
+        <div className="next-project">
+          <span className="eyebrow">NEXT PROJECT</span>
+          <Link href={`/projects/${next.slug}`}>{next.name} <ArrowUpRight /></Link>
+        </div>
       </div>
     </main>
   );

@@ -182,14 +182,14 @@ export function ProjectGrid({ all = true }: { all?: boolean }) {
                 {p.status}
               </span>
               <Link href={`/projects/${p.slug}`}>
-                Explore project <ArrowUpRight size={16} />
+                Explore case study <ArrowUpRight size={16} />
               </Link>
             </div>
             <div className="project-external">
-              <a href={p.live} target="_blank" rel="noreferrer">
+              <a href={p.live} target="_blank" rel="noreferrer" aria-label={`Visit ${p.name} website`}>
                 Visit website <ArrowUpRight size={13} />
               </a>
-              <a href={p.repo} target="_blank" rel="noreferrer">
+              <a href={p.repo} target="_blank" rel="noreferrer" aria-label={`View ${p.name} source on GitHub`}>
                 GitHub <Github size={13} />
               </a>
             </div>
@@ -370,14 +370,14 @@ export function Toolkit() {
 export function AboutSection({ full = false }: { full?: boolean }) {
   return (
     <section className="shell section about-section">
-      <div className="about-art">
+      <div className="about-art portrait-frame">
         <Image
-          src="/images/orbital-network.webp"
-          alt="Connected points of light surrounded by cyan and violet orbits"
-          width={1280}
-          height={720}
+          src="/images/kendra-hartnett-portrait.webp"
+          alt="Portrait of Kendra Hartnett"
+          width={1087}
+          height={1447}
+          sizes="(max-width: 760px) 88vw, 38vw"
         />
-        <span>CONNECTING IDEAS TO IMPACT</span>
       </div>
       <div>
         <SectionTitle
@@ -386,10 +386,12 @@ export function AboutSection({ full = false }: { full?: boolean }) {
           title="The builder behind the ideas."
         />
         <p>
-          I'm a Full-Stack Developer and AI-Augmented Builder who enjoys
-          bringing ideas to life through technology.
+          I’m a full-stack developer and AI-augmented builder who combines
+          engineering, product thinking, and human-centered design. I look for
+          problems worth solving and turn what I learn into thoughtful software.
         </p>
-        <p>
+        {!full && <p>I’m drawn to meaningful problems, useful systems, and technology that makes complex tasks feel clearer and more manageable.</p>}
+        {full && <p>
           My path into technology hasn't been traditional. I chose to give
           myself a second chance and pursue something entirely new. Along the
           way, I've challenged my own expectations, pushed beyond what I once
@@ -397,23 +399,27 @@ export function AboutSection({ full = false }: { full?: boolean }) {
           than I imagined. That perspective has shaped how I approach
           challenges: with resourcefulness, adaptability, initiative, and a
           willingness to think differently.
-        </p>
-        <p>
+        </p>}
+        {full && <p>
           I believe great software brings together logic and creativity,
           functionality and experience, technology with human understanding. I
           take the engineering seriously, but I also believe there's room for
           imagination, experimentation, and a little magic along the way.
-        </p>
+        </p>}
         <p className="personal-motto">
           <strong>
             I think critically. I create boldly. I build purposefully.
           </strong>
         </p>
-        {full && (
-          <Link className="text-link" href="/projects">
-            Explore the work <ArrowUpRight size={18} />
-          </Link>
-        )}
+        <div className="about-actions">
+          {full ? (
+            <Link className="text-link" href="/projects">Explore the work <ArrowUpRight size={18} /></Link>
+          ) : (
+            <Link className="text-link" href="/about">Read more about me <ArrowUpRight size={18} /></Link>
+          )}
+          {!full && <a className="text-link" href="/resume/KendraAnneHartnettResume.pdf" download>Download résumé <ArrowUpRight size={18} /></a>}
+          <a className="text-link" href="https://www.kendrahartnett.dev/" target="_blank" rel="noreferrer">www.kendrahartnett.dev <ArrowUpRight size={18} /></a>
+        </div>
       </div>
     </section>
   );
@@ -434,12 +440,15 @@ export function ContactSection({
           worth <em>solving?</em>
         </Heading>
         <p>
-          For teams looking for a thoughtful builder, businesses with a
-          challenge,
-          <br className="desktop-break" /> and collaborators with an idea. Let’s
-          connect.
+          I’m open to full-stack, AI application, and product-focused developer
+          opportunities. Hiring for a role, building a product, or exploring a
+          collaboration? Let’s talk.
         </p>
         <ContactForm />
+        <div className="contact-direct">
+          <a href="/resume/KendraAnneHartnettResume.pdf" download>Download résumé <ArrowUpRight size={16} /></a>
+          <a href="mailto:kendrahartnett2208@gmail.com">kendrahartnett2208@gmail.com <ArrowUpRight size={16} /></a>
+        </div>
         <div className="button-row contact-socials">
           <a
             className="button secondary gold-accent"

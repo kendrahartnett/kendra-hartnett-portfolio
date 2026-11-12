@@ -18,13 +18,13 @@ export type Project = {
   role: string;
   flagship?: boolean;
 };
-export const projects: Project[] = [
+const projectEntries: Project[] = [
   {
     slug: "eevora",
     name: "EEVORA",
     category: "Independent product · Practical AI",
     summary:
-      "Making practical AI approachable for small businesses. An independent brand built around real work, useful automation, and human control.",
+      "An independent product direction for small businesses, beginning with a deployed service website and a human-reviewed document workflow concept.",
     status: "Website deployed",
     image: "eevora.png",
     alt: "The EEVORA website with its original Beyond Automation visual identity",
@@ -53,7 +53,7 @@ export const projects: Project[] = [
     name: "The Bridge",
     category: "Mission-driven · Full-stack application",
     summary:
-      "Connecting Chicago outreach workers and community members with approved organizations, with privacy and dignity at the center.",
+      "A full-stack application coordinating Chicago community needs with approved organizations, using privacy screening and human review before requests can go public.",
     status: "Deployed application",
     image: "the-bridge.png",
     alt: "Original The Bridge artwork showing a golden bridge and the Chicago skyline",
@@ -82,14 +82,14 @@ export const projects: Project[] = [
       "The database does not ask for exact locations or identifying details of people being served. Screening failures do not publish requests, and uncertain submissions require human review.",
     limits:
       "Screening can miss details. Chat does not have the request form’s local privacy filter. The assistant has no access to accounts or the database. Organization verification is manual.",
-    role: "Created and developed by Kendra Anne Hartnett, with Claude Code and Codex supporting implementation and iteration.",
+    role: "Kendra Anne Hartnett designed the privacy boundaries and role-specific workflow, evaluated screening behavior, and tested request and claim rules. Claude Code and Codex supported implementation and iteration.",
   },
   {
     slug: "goodneighbor",
     name: "GoodNeighbor",
     category: "Community technology · Full-stack application",
     summary:
-      "A focused guide to verified Chicago volunteer opportunities, connecting people directly with local organizers.",
+      "A Chicago volunteer-opportunity guide with searchable verified listings and a protected editorial publishing workflow.",
     status: "Deployed application",
     image: "goodneighbor.png",
     alt: "Authentic GoodNeighbor homepage screenshot from the project repository",
@@ -112,14 +112,14 @@ export const projects: Project[] = [
       "Keep the scope local and the source visible. Organizers handle participation; GoodNeighbor focuses on discovery and editorial stewardship.",
     limits:
       "Chicago-only. No public accounts, volunteer registration, messaging, or payments. Listing verification requires ongoing human review.",
-    role: "Designed and built by Kendra Anne Hartnett in collaboration with Codex, as documented in the repository.",
+    role: "Kendra Anne Hartnett shaped the Chicago-only scope, verification model, and protected editorial workflow, and built the application in collaboration with Codex, as documented in the repository.",
   },
   {
     slug: "ethical-apple",
     name: "Ethical Apple",
     category: "Mission-driven · Food affordability",
     summary:
-      "A budget-first meal and grocery planning prototype, using transparent sample prices and predictable planning logic.",
+      "A browser-based meal and grocery planner that turns household needs and a budget into a sample shopping list with predictable rule-based logic.",
     status: "Deployed prototype",
     image: "ethical-apple.png",
     alt: "Authentic Ethical Apple landing page from the project repository",
@@ -144,6 +144,12 @@ export const projects: Project[] = [
     role: "Authored by Kendra Hartnett for the Next Chapter Project. The planning module documents her own decision logic.",
   },
 ];
+const projectOrder = ["the-bridge", "ethical-apple", "eevora", "goodneighbor"];
+export const projects = projectOrder.map((slug) => {
+  const project = projectEntries.find((entry) => entry.slug === slug);
+  if (!project) throw new Error(`Missing portfolio project: ${slug}`);
+  return project;
+});
 export const github = "https://github.com/kendrahartnett";
 export const linkedin =
   "https://www.linkedin.com/in/kendra-hartnett-7877ab422/";

@@ -7,8 +7,8 @@ import {
   ArrowUpRight,
   Menu,
   X,
-  Pause,
-  Play,
+  EyeOff,
+  Eye,
   GitBranch as Github,
 } from "lucide-react";
 import { MotionConfig, motion, useReducedMotion } from "motion/react";
@@ -139,7 +139,8 @@ export function HeroArtwork() {
         onClick={() => setHidden(show)}
         aria-label={show ? "Hide animated artwork" : "Show animated artwork"}
       >
-        {show ? <Pause size={13} /> : <Play size={13} />}
+        {show ? <EyeOff size={16} /> : <Eye size={16} />}
+        <span>{show ? "Hide artwork" : "Show artwork"}</span>
       </button>
     </div>
   );

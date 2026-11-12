@@ -36,9 +36,10 @@ export async function POST(request: Request) {
   const name = typeof payload.name === "string" ? payload.name.trim() : "";
   const email = typeof payload.email === "string" ? payload.email.trim() : "";
   const subject = typeof payload.subject === "string" ? payload.subject.trim() : "";
+  const emailSubject = subject || "Portfolio inquiry";
   const message = typeof payload.message === "string" ? payload.message.trim() : "";
-  if (!name || name.length > 100 || !emailPattern.test(email) || email.length > 254 || !subject || subject.length > 150 || message.length < 10 || message.length > 5_000) {
-    return fail("Please check your name, email, subject, and message.", 400);
+  if (!name || name.length > 100 || !emailPattern.test(email) || email.length > 254 || subject.length > 150 || message.length < 10 || message.length > 5_000) {
+    return fail("Please check your name, email, and message.", 400);
   }
 
   const key = process.env.RESEND_API_KEY;
@@ -72,8 +73,8 @@ export async function POST(request: Request) {
         from,
         to: [to],
         reply_to: email,
-        subject: `Portfolio: ${subject.replace(/[\r\n]/g, " ")}`,
-        text: `From: ${name} <${email}>\nSubject: ${subject}\n\n${message}`,
+        subject: `Portfolio: ${emailSubject.replace(/[\r\n]/g, " ")}`,
+        text: `From: ${name} <${email}>\nSubject: ${emailSubject}\n\n${message}`,
       }),
       cache: "no-store",
     });

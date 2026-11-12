@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: "%s | Kendra Hartnett",
   },
   description:
-    "Full-stack developer and AI-augmented builder. Purposeful applications, practical AI, and independent products by Kendra Hartnett.",
+    "Kendra Hartnett builds full-stack applications and practical AI systems with thoughtful interfaces, reliable backends, and human-centered safeguards. Open to developer roles.",
   openGraph: {
     title: "Kendra Hartnett - Thoughtful Builder",
     description: "Purposeful technology. Thoughtfully built.",
