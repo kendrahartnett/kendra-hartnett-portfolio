@@ -11,6 +11,7 @@ const workflowSteps: Record<string, string[]> = {
   "ethical-apple": ["Enter budget and household", "Choose meals with rules", "Adjust for pantry quantities", "Review list and estimates"],
   eevora: ["Explore a service", "Inspect illustrative workflow", "Pause for human review", "Contact EEVORA"],
   goodneighbor: ["Search verified listings", "Filter by place or cause", "Check the source", "Visit the organizer"],
+  "kendra-hartnett-services": ["Explore services", "Review the process", "Describe a project", "Send an inquiry"],
 };
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -98,6 +99,8 @@ export default async function ProjectPage({
               ? "Original project artwork"
               : p.slug === "goodneighbor"
                 ? "Homepage screenshot from the project repository; the original capture includes a development indicator"
+                : p.slug === "kendra-hartnett-services"
+                  ? "Homepage preview from the project repository"
                 : "Project image from the source repository"}
           </figcaption>
         </figure>

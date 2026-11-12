@@ -126,6 +126,28 @@ export function caseSections(project: Project): CaseSection[] {
         },
         { label: "07 / SCOPE AND LIMITATIONS", title: "Curation is ongoing work", body: project.limits },
       ];
+    case "kendra-hartnett-services":
+      return [
+        shared.problem,
+        shared.built,
+        {
+          label: "03 / EXPERIENCE DESIGN",
+          title: "A clear path from service to conversation",
+          body: "The homepage introduces the practice, presents three service areas, explains the discovery-to-launch process, and leads to an inquiry form. It also connects visitors to my portfolio for examples of my work.",
+        },
+        {
+          label: "04 / IMPLEMENTATION",
+          title: "A responsive Next.js site with a server-side inquiry route",
+          body: "The site uses Next.js, TypeScript, Tailwind CSS, and Motion. The inquiry route validates input, checks a honeypot field and rate limit, and sends the message through Resend when configured. Provider failures return an error rather than reporting success.",
+        },
+        {
+          label: "05 / CURRENT RESULT",
+          title: "A deployed home for my independent practice",
+          body: "The website is live with service information, a process overview, an About section, portfolio links, and a project inquiry form. Its service descriptions are offerings, not claims of completed client work.",
+          source: { label: "Read the source repository", url: project.repo },
+        },
+        { label: "06 / SCOPE", title: "What the website represents", body: project.limits },
+      ];
     default:
       return [];
   }

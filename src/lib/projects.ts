@@ -143,8 +143,37 @@ const projectEntries: Project[] = [
       "Prices are illustrative planning estimates, not checkout quotes. Distances are fixed examples. Dietary tags are preferences, not allergy or nutrition guidance. No runtime AI model or live pricing API.",
     role: "Authored by Kendra Hartnett for the Next Chapter Project. The planning module documents her own decision logic.",
   },
+  {
+    slug: "kendra-hartnett-services",
+    name: "Kendra Hartnett Services",
+    category: "Independent practice · Business website",
+    summary:
+      "A website for my independent software and automation practice, explaining my services and giving prospective clients a way to start a project conversation.",
+    status: "Deployed website",
+    image: "kendra-hartnett-services.webp",
+    alt: "Screenshot of the Kendra Hartnett Services homepage with a light pink and cream design",
+    live: "https://www.kendrahartnett.dev/",
+    repo: "https://github.com/kendrahartnett/kendra-hartnett-services",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Motion", "Resend"],
+    problem:
+      "Businesses need a clear way to understand the software and automation services I offer and begin a conversation about their own needs.",
+    audience: "Businesses considering custom software, automation, or practical AI work.",
+    features: [
+      "Service descriptions for custom software, business automation, and practical AI.",
+      "A four-step process from discovery through launch and support.",
+      "A project inquiry form with server-side validation and email delivery through Resend.",
+      "Links to my portfolio and professional profiles.",
+    ],
+    architecture:
+      "A Next.js App Router site built with TypeScript, Tailwind CSS, and Motion. A server route validates contact submissions and sends email through Resend.",
+    decision:
+      "Present the practice around business problems and a clear inquiry path, with custom software, automation, and AI described as possible approaches.",
+    limits:
+      "The website describes services and a process; it does not establish completed client engagements or measured business outcomes.",
+    role: "Designed and built by Kendra Hartnett for her independent software and automation practice.",
+  },
 ];
-const projectOrder = ["the-bridge", "ethical-apple", "eevora", "goodneighbor"];
+const projectOrder = ["the-bridge", "ethical-apple", "eevora", "goodneighbor", "kendra-hartnett-services"];
 export const projects = projectOrder.map((slug) => {
   const project = projectEntries.find((entry) => entry.slug === slug);
   if (!project) throw new Error(`Missing portfolio project: ${slug}`);
